@@ -23,6 +23,7 @@ while(escolha != 0) {
     cout << "2 - Conferir Historico de Transacoes"<< endl;
     cout << "3 - Definir metas pessoais"<< endl;
     cout << "4 - Adicionar uma Transicao"<< endl;
+    cout << "5 - Gerar relatorio"<< endl;
 
     cin >> escolha;
 
@@ -53,6 +54,8 @@ while(escolha != 0) {
             conta.adicionar_transacao(descricao, transicao);
 
             break;
+        case 5:
+            conta.obter_relatorio();
             break;
         default:
             cout << "Opcao invalida" << endl;

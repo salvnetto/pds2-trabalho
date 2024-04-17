@@ -9,5 +9,4 @@
 struct Metas {
     void definirMetas();
 };
-
 #endif

@@ -20,6 +20,8 @@ struct Saldo {
 
     // Função para obter o histórico de transações
     std::map<std::string, double> obter_historico_transacoes();
+
+    void obter_relatorio();
 };
 
 #endif
