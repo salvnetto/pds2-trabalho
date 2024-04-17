@@ -8,7 +8,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This program built for i386-pc-mingw32
  
 
-# Make data base, printed on Wed Apr 17 09:40:00 2024
+# Make data base, printed on Wed Apr 17 10:23:56 2024
 
 # Variables
 
@@ -33,7 +33,8 @@ HOMEDRIVE = C:
 # automatic
 @F = $(notdir $@)
 # automatic
-^D = $(patsubst %/,%,$(dir $^))
+^D  
+= $(patsubst %/,%,$(dir $^))
 # makefile
 CURDIR := c:/Users/Bruno/Desktop/PDS2 - VC/Trabalho/pds2-trabalho
 # default
@@ -61,8 +62,7 @@ PROGRAMDATA = C:\ProgramData
 # environment
 VSCODE_CWD = C:\Users\Bruno\AppData\Local\Programs\Microsoft VS Code
 # environment
-PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System 
-32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps;C:\Users\Bruno\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera\13.0sp1\modelsim_ase\win32aloem
+PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps;C:\Users\Bruno\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera\13.0sp1\modelsim_ase\win32aloem
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
@@ -82,7 +82,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_2332_LHOYAEXGYICOMSUG
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_23808_XCTCVLPECHTZLNNQ
 # environment
 COMPUTERNAME = ASUS
 # environment
@@ -159,8 +159,6 @@ MFLAGS = -Rrqp
 SYSTEMROOT = C:\Windows
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# environment
-VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 +F = $(notdir $+)
 # environment
@@ -198,11 +196,11 @@ PROCESSOR_LEVEL = 6
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 2332
+VSCODE_PID = 23808
 # environment
 USERDOMAIN_ROAMINGPROFILE = ASUS
 # variable set hash-table stats:
-# Load=94/1024=9%, Rehash=0, Collisions=13/128=10%
+# Load=93/1024=9%, Rehash=0, Collisions=13/127=10%
 
 # Pattern-specific Variable Values
 
@@ -220,8 +218,7 @@ USERDOMAIN_ROAMINGPROFILE = ASUS
 # C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1711458197): 5 files, no impossibilities.
 # C:\Windows (key C:/Windows, mtime 1712699809): 118 files, no impossibilities.
 # C:\altera\13.0sp1\modelsim_ase\win32aloem (key C:/altera/13.0sp1/modelsim_ase/win32aloem, mtime 1712797896): 95 files, no impossibilities.
-# C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps (key C:/Users/Bruno/AppData/Local/Microsoft/Wi 
-ndowsApps, mtime 1712470937): 40 files, no impossibilities.
+# C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps (key C:/Users/Bruno/AppData/Local/Microsoft/WindowsApps, mtime 1712470937): 40 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1709906659): 13 files, no impossibilities.
 # C:\Windows\system32 (key C:/Windows/system32, mtime 1712224846): 3019 files, no impossibilities.
 # C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1704228401): 5 files, no impossibilities.
@@ -248,7 +245,8 @@ all:
 #  Command-line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has not been updat 
+ed.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -338,10 +336,9 @@ src/metas.cpp:
 # # of strings in strcache: 1
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
-# strcache free: total = 4087 / max = 40 
-87 / min = 4087 / avg = 4087
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Apr 17 09:40:00 2024
+# Finished Make data base on Wed Apr 17 10:23:56 2024
 
  
 make.exe: *** No rule to make target `all'.  Stop.
