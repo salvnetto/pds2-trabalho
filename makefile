@@ -15,5 +15,5 @@ ${BUILD}/saldo.o: ${INCLUDE}/saldo.hpp ${SRC}/saldo.cpp
 ${BUILD}/metas.o: ${INCLUDE}/metas.hpp ${SRC}/metas.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/metas.cpp -o ${BUILD}/metas.o
 
-${BUILD}/main.o: ${INCLUDE}/saldo.hpp ${SRC}/main.cpp
+${BUILD}/main.o: ${INCLUDE}/saldo.hpp ${INCLUDE}/metas.hpp ${SRC}/main.cpp 
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/main.cpp -o ${BUILD}/main.o

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <limits>
 
 struct Metas {
     void definirMetas();
