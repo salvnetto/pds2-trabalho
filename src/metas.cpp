@@ -1,12 +1,13 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <limits>
 
 #include <metas.hpp>
 
 
- void Metas::definirMetas() {
-        std::ofstream arquivo("./build/metas.txt", std::ios_base::app); // continua se arquivo existir
+void Metas::definirMetas() {
+        std::ofstream arquivo("metas.txt", std::ios_base::app); // continua se arquivo existir
         if (arquivo.is_open()) {
             std::string meta;
             std::cout << "Digite suas metas de economia, (digite FIM para encerrar):\n";
@@ -30,7 +31,7 @@
             arquivo.close();
         } else {
             std::cout << "Criando novo arquivo...";
-            std::ofstream novoArquivo("./build/metas.txt"); // cria arquivo se n existir
+            std::ofstream novoArquivo("metas.txt"); // cria arquivo se n existir
             if (novoArquivo.is_open()) {
                 std::string meta;
                 std::cout << "Digite suas metas de economia, (primeiro o valor, depois sua descricao) (digite FIM para encerrar):\n";
@@ -56,4 +57,4 @@
                 std::cerr << "Erro ao criar o arquivo.\n";
             }
         }
- }
+}
