@@ -5,10 +5,12 @@
 #include <map>
 #include <string>
 
-struct Saldo {
+class Saldo {
+private:
     float saldo_atual;
     std::map<std::string, double> historico_transacoes;
 
+public:
     // Construtor para inicializar o saldo e o histórico de transações
     Saldo(double saldo_inicial);
 

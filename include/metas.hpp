@@ -6,7 +6,8 @@
 #include <string>
 #include <limits>
 
-struct Metas {
+class Metas {
+public:
     void definirMetas();
 };
 

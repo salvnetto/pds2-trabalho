@@ -1,6 +1,5 @@
-#include <saldo.hpp>
+#include "saldo.hpp"
 #include <iostream>
-
 
 Saldo::Saldo(double saldo_inicial) : saldo_atual(saldo_inicial) {}
 
@@ -9,9 +8,9 @@ double Saldo::obter_saldo_atual() {
 }
 
 void Saldo::adicionar_transacao(std::string descricao, double valor) {
-    if((saldo_atual + valor) < 0){
-        std::cout << "ERRO: Valor a ser debitado e maior que o saldo atual" << std::endl;
-    }else{
+    if ((saldo_atual + valor) < 0) {
+        std::cout << "ERRO: Valor a ser debitado é maior que o saldo atual" << std::endl;
+    } else {
         saldo_atual += valor;
         historico_transacoes[descricao] = valor;
     }
