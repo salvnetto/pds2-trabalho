@@ -8,7 +8,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This program built for i386-pc-mingw32
  
 
-# Make data base, printed on Mon May 27 17:39:18 2024
+# Make data base, printed on Tue May 28 09:09:03 2024
 
 # Variables
 
@@ -33,10 +33,9 @@ HOMEDRIVE = C:
 # automatic
 @F = $(notdir $@)
 # automatic
-^D  
-= $(patsubst %/,%,$(dir $^))
+^D = $(patsubst %/,%,$(dir $^))
 # makefile
-CURDIR := c:/Users/Bruno/Desktop/PDS2 TT/pds2-trabalho
+CURDIR := c:/Users/Bruno/Desktop/Trabalho dia 28/pds2-trabalho
 # default
 SHELL := sh.exe
 # environment
@@ -57,8 +56,6 @@ FPS_BROWSER_USER_PROFILE_STRING = Default
 TMP = C:\Users\Bruno\AppData\Local\Temp
 # environment
 PROGRAMW6432 = C:\Program Files
-# environment
-EFC_19284 = 1
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
@@ -81,10 +78,12 @@ NUMBER_OF_PROCESSORS = 12
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives
+# environment
+EFC_12460 = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9440_HWVUDSMAIRMJBRGG
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_10688_PPJJFITXAFZULCFR
 # environment
 COMPUTERNAME = ASUS
 # environment
@@ -100,7 +99,8 @@ PUBLIC = C:\Users\Public
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Bruno\AppData\Roaming\Code\CachedData\dc96b837cf6bb4af9cd736aa3af08cf8279f7685
+VSCODE_CODE_CACHE_PATH = C:\Users\Bruno\AppDa 
+ta\Roaming\Code\CachedData\dc96b837cf6bb4af9cd736aa3af08cf8279f7685
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -163,8 +163,7 @@ SYSTEMROOT = C:\Windows
 VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 +F = $(notdir $+)
-# 
- environment
+# environment
 APPDATA = C:\Users\Bruno\AppData\Roaming
 # environment
 TEMP = C:\Users\Bruno\AppData\Local\Temp
@@ -199,11 +198,11 @@ PROCESSOR_LEVEL = 6
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 9440
+VSCODE_PID = 10688
 # environment
 USERDOMAIN_ROAMINGPROFILE = ASUS
 # variable set hash-table stats:
-# Load=94/1024=9%, Rehash=0, Collisions=14/129=11%
+# Load=94/1024=9%, Rehash=0, Collisions=19/143=13%
 
 # Pattern-specific Variable Values
 
@@ -211,10 +210,9 @@ USERDOMAIN_ROAMINGPROFILE = ASUS
 
 # Directories
 
-# C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 17016 
-71350): 28 files, no impossibilities.
+# C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1701671350): 28 files, no impossibilities.
 # C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1701671350): 168 files, no impossibilities.
-# . (key c:/Users/Bruno/Desktop/PDS2 TT/pds2-trabalho, mtime 1716842347): 9 files, no impossibilities.
+# . (key c:/Users/Bruno/Desktop/Trabalho dia 28/pds2-trabalho, mtime 1716891478): 9 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Python\Launcher\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Launcher/, mtime 1713536008): 5 files, no impossibilities.
 # C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1704228104): 10 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/Bruno/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1715296326): 5 files, no impossibilities.
@@ -228,8 +226,7 @@ USERDOMAIN_ROAMINGPROFILE = ASUS
 # C:\Users\Bruno\AppData\Local\Programs\Python\Python312\Scripts\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Python312/Scripts/, mtime 1713667308): 6 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1709906659): 13 files, no impossibilities.
 # C:\Windows\system32 (key C:/Windows/system32, mtime 1716736355): 3019 files, no impossibilities.
-# C:\intelFPGA\18.1\modelsim_ase\win32aloem  
-(key C:/intelFPGA/18.1/modelsim_ase/win32aloem, mtime 1713430436): 111 files, no impossibilities.
+# C:\intelFPGA\18.1\modelsim_ase\win32aloem (key C:/intelFPGA/18.1/modelsim_ase/win32aloem, mtime 1713430436): 111 files, no impossibilities.
 # C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1704228401): 5 files, no impossibilities.
 # C:\Program Files (x86)\GnuWin32\bin (key C:/Program Files (x86)/GnuWin32/bin, mtime 1713268064): 5 files, no impossibilities.
 
@@ -241,11 +238,11 @@ USERDOMAIN_ROAMINGPROFILE = ASUS
 
 # Files
 
-build/main.o: include/saldo.hpp include/metas.hpp src/main.cpp
+build/main.o: include/saldo.hpp include/metas.hpp src/main.cpp include/banco.hpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `makefile', line 19):
+#  commands to execute (from `makefile', line 28):
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/main.cpp -o ${BUILD}/main.o
 	
 
@@ -258,8 +255,28 @@ all:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
+build/cartaodecredito.o: include/cartaodecredito.hpp src/cartaodecredito.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 25):
+	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/cartaodecredito.cpp -o ${BUILD}/cartaodecredito.o
+	
+
 # Not a target:
 .DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+include/banco.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/banco.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -287,17 +304,37 @@ build/metas.o: include/metas.hpp src/metas.cpp
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-05-27 17:39:07
+#  Last modified 2024-05-28 09:07:54
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+include/contabancaria.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/contabancaria.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+build/banco.o: include/banco.hpp src/banco.cpp include/contabancaria.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 19):
+	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/banco.cpp -o ${BUILD}/banco.o
+	
 
 build/saldo.o: include/saldo.hpp src/saldo.cpp
 #  Implicit rule search has not been done.
@@ -307,12 +344,12 @@ build/saldo.o: include/saldo.hpp src/saldo.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/saldo.cpp -o ${BUILD}/saldo.o
 	
 
-build/ControleFinanceiro: build/saldo.o build/metas.o build/main.o
+build/ControleFinanceiro: build/saldo.o build/metas.o build/banco.o build/contabancaria.o build/main.o build/cartaodecredito.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `makefile', line 10):
-	${CC} ${CFLAGS} ${BUILD}/saldo.o ${BUILD}/metas.o ${BUILD}/main.o -o ${BUILD}/${TARGET}
+	${CC} ${CFLAGS} ${BUILD}/saldo.o ${BUILD}/metas.o ${BUILD}/banco.o ${BUILD}/contabancaria.o ${BUILD}/main.o ${BUILD}/cartaodecredito.o -o ${BUILD}/${TARGET}
 	
 
 # Not a target:
@@ -320,6 +357,26 @@ src/main.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+# Not a target:
+include/cartaodecredito.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/cartaodecredito.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/contabancaria.o: include/contabancaria.hpp src/contabancaria.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `makefile', line 22):
+	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/contabancaria.cpp -o ${BUILD}/contabancaria.o
+	
 
 # Not a target:
 include/metas.hpp:
@@ -334,7 +391,7 @@ src/metas.cpp:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=13/1024=1%, Rehash=0, Collisions=0/34=0%
+# Load=22/1024=2%, Rehash=0, Collisions=0/54=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -346,7 +403,7 @@ src/metas.cpp:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon May 27 17:39:18 2024
+# Finished Make data base on Tue May 28 09:09:03 2024
 
  
 make.exe: *** No rule to make target `all'.  Stop.

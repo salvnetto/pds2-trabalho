@@ -1,9 +1,11 @@
-make.exe --dry-run --always-make --keep-going --print-directory
-make.exe: Entering directory `c:/Users/Bruno/Desktop/PDS2 TT/pds2-trabalho'
-g++ -std=c++11 -Wall -g -I ./include/ -c ./src/saldo.cpp -o ./build/saldo.o
+make.exe --dry-run --keep-going --print-directory
+make.exe: Entering directory `c:/Users/Bruno/Desktop/Trabalho dia 28/pds2-trabalho'
+g++ -std=c++11 -Wall -g -I ./include/ -c ./src/banco.cpp -o ./build/banco.o
  
-g++ -std=c++11 -Wall -g -I ./include/ -c ./src/metas.cpp -o ./build/metas.o
+g++ -std=c++11 -Wall -g -I ./include/ -c ./src/contabancaria.cpp -o ./build/contabancaria.o
 g++ -std=c++11 -Wall -g -I ./include/ -c ./src/main.cpp -o ./build/main.o
-g++ -std=c++11 -Wall -g ./build/saldo.o ./build/metas.o ./build/main.o -o ./build/ControleFinanceiro
-make.exe: Leaving directory `c:/Users/Bruno/Desktop/PDS2 TT/pds2-trabalho'
+ 
+g++ -std=c++11 -Wall -g -I ./include/ -c ./src/cartaodecredito.cpp -o ./build/cartaodecredito.o
+g++ -std=c++11 -Wall -g ./build/saldo.o ./build/metas.o ./build/banco.o ./build/contabancaria.o ./build/main.o ./build/cartaodecredito.o -o ./build/ControleFinanceiro
+make.exe: Leaving directory `c:/Users/Bruno/Desktop/Trabalho dia 28/pds2-trabalho'
  
