@@ -8,7 +8,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This program built for i386-pc-mingw32
  
 
-# Make data base, printed on Tue Jun 04 06:49:11 2024
+# Make data base, printed on Tue Jun 04 08:40:29 2024
 
 # Variables
 
@@ -33,8 +33,7 @@ HOMEDRIVE = C:
 # automatic
 @F = $(notdir $@)
 # automatic
-^D  
-= $(patsubst %/,%,$(dir $^))
+^D = $(patsubst %/,%,$(dir $^))
 # makefile
 CURDIR := c:/Users/Bruno/Desktop/Trabalho dia 04/pds2-trabalho
 # default
@@ -200,7 +199,7 @@ VSCODE_PID = 17096
 # environment
 USERDOMAIN_ROAMINGPROFILE = ASUS
 # variable set hash-table stats:
-# Load=93/1024=9%, Rehash=0, Collisions=19/142=13%
+# Load=93/1024=9%, Rehash=0, Collisions=21/144=15%
 
 # Pattern-specific Variable Values
 
@@ -208,8 +207,7 @@ USERDOMAIN_ROAMINGPROFILE = ASUS
 
 # Directories
 
-# C:\Program Files\MATLAB\R2024a\bin (key C:/Program Files/MATL 
-AB/R2024a/bin, mtime 1716999570): 19 files, no impossibilities.
+# C:\Program Files\MATLAB\R2024a\bin (key C:/Program Files/MATLAB/R2024a/bin, mtime 1716999570): 19 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1701671350): 28 files, no impossibilities.
 # C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1701671350): 168 files, no impossibilities.
 # . (key c:/Users/Bruno/Desktop/Trabalho dia 04/pds2-trabalho, mtime 1717494544): 9 files, no impossibilities.
@@ -221,11 +219,11 @@ AB/R2024a/bin, mtime 1716999570): 19 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
 # C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1711458197): 5 files, no impossibilities.
 # C:\Windows (key C:/Windows, mtime 1714986543): 123 files, no impossibilities.
-# C:\altera\13.0sp1\modelsim_ase\win32aloem (key C:/altera/13.0sp 
-1/modelsim_ase/win32aloem, mtime 1712797896): 95 files, no impossibilities.
+# C:\altera\13.0sp1\modelsim_ase\win32aloem (key C:/altera/13.0sp1/modelsim_ase/win32aloem, mtime 1712797896): 95 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps (key C:/Users/Bruno/AppData/Local/Microsoft/WindowsApps, mtime 1716915843): 40 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Python\Python312\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Python312/, mtime 1713667391): 19 files, no impossibilities.
-# C:\Users\Bruno\AppData\Local\Programs\Python\Python312\Scripts\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Python312/Scripts/, mtime 1713667308): 6 files, no impossibilities.
+# C:\Users\Bruno\AppData\Local\Programs\Python\Python312\Scripts\ (key C:/Users/Bruno/AppData/Local/Programs 
+/Python/Python312/Scripts/, mtime 1713667308): 6 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1709906659): 13 files, no impossibilities.
 # C:\Windows\system32 (key C:/Windows/system32, mtime 1716736355): 3019 files, no impossibilities.
 # C:\intelFPGA\18.1\modelsim_ase\win32aloem (key C:/intelFPGA/18.1/modelsim_ase/win32aloem, mtime 1713430436): 111 files, no impossibilities.
@@ -244,8 +242,7 @@ build/main.o: include/saldo.hpp include/metas.hpp src/main.cpp include/banco.hpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execut 
-e (from `makefile', line 28):
+#  commands to execute (from `makefile', line 28):
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/main.cpp -o ${BUILD}/main.o
 	
 
@@ -281,8 +278,7 @@ include/banco.hpp:
 # Not a target:
 src/banco.cpp:
 #  Implicit rule search has not been done.
-#  Modification ti 
-me never checked.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
@@ -308,7 +304,7 @@ build/metas.o: include/metas.hpp src/metas.cpp
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-06-04 06:49:04
+#  Last modified 2024-06-04 08:35:10
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -366,6 +362,8 @@ src/main.cpp:
 include/cartaodecredito.hpp:
 #  Implicit rule search has not been done.
 #  Modi 
+make.exe: *** No rule to make target `all'.  Stop.
+
 fication time never checked.
 #  File has not been updated.
 
@@ -375,7 +373,7 @@ src/cartaodecredito.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-build/contabancaria.o: include/contabancaria.hpp src/contabancaria.cpp
+build/contabancaria.o: include/contabancaria.hpp src/contabancaria.cpp include/cartaodecredito.hpp include/saldo.hpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -396,7 +394,7 @@ src/metas.cpp:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=22/1024=2%, Rehash=0, Collisions=0/54=0%
+# Load=22/1024=2%, Rehash=0, Collisions=0/56=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -408,8 +406,6 @@ src/metas.cpp:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jun 04 06:49:11 2024
+# Finished Make data base on Tue Jun 04 08:40:29 2024
 
  
-make.exe: *** No rule to make target `all'.  Stop.
-

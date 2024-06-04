@@ -1,6 +1,6 @@
 #include <iostream>
+#include <limits>  // Adicionar esta linha para usar numeric_limits
 #include "Saldo.hpp"
-#include "Metas.hpp"
 #include "Banco.hpp"
 #include "ContaBancaria.hpp"
 #include "CartaoDeCredito.hpp"
@@ -12,27 +12,18 @@ void mostrarMenu() {
     cout << "0 - Sair do programa" << endl;
     cout << "1 - Conferir Saldo Atual" << endl;
     cout << "2 - Conferir Historico de Transacoes" << endl;
-    cout << "3 - Definir metas pessoais" << endl;
-    cout << "4 - Adicionar uma Transicao" << endl;
-    cout << "5 - Criar uma nova conta" << endl;
-    cout << "6 - Pesquisar uma conta" << endl;
-    cout << "7 - Listar todas as contas" << endl;
-    cout << "8 - Associar Cartao de Credito a uma Conta" << endl;
-    cout << "9 - Adicionar Despesa no Cartao de Credito" << endl;
-    cout << "10 - Mostrar Informaçoes do Cartão de Credito" << endl;
+    cout << "3 - Adicionar uma Transacao" << endl;
+    cout << "4 - Criar uma nova conta" << endl;
+    cout << "5 - Pesquisar uma conta" << endl;
+    cout << "6 - Listar todas as contas" << endl;
+    cout << "7 - Associar Cartao de Credito a uma Conta" << endl;
+    cout << "8 - Adicionar Despesa no Cartao de Credito" << endl;
+    cout << "9 - Mostrar Informacoes do Cartao de Credito" << endl;
 }
 
 int main() {
     Banco banco;
-    Saldo conta(1000);
-    Metas metas;
 
-    conta.adicionar_transacao("Deposito", 500);
-    conta.adicionar_transacao("Compra de alimentos", -200);
-    conta.adicionar_transacao("Pagamento de conta de luz", -100);
-
-    double transicao;
-    std::string descricao;
     int escolha = -1;
 
     while (escolha != 0) {
@@ -43,28 +34,71 @@ int main() {
             case 0:
                 cout << "Saindo do programa..." << endl;
                 break;
-            case 1:
-                cout << "Saldo Atual: R$" << conta.obter_saldo_atual() << endl;
-                break;
-            case 2:
-                cout << "Historico de transacoes: " << endl;
-                for (const auto& transacao : conta.obter_historico_transacoes()) {
-                    cout << "- " << transacao.first << ": " << transacao.second << endl;
+            case 1: {
+                int id;
+                cout << "Digite o ID da conta: ";
+                cin >> id;
+
+                ContaBancaria* conta = banco.pesquisa(id);
+                if (conta) {
+                    cout << "Saldo Atual: R$" << conta->obterSaldoAtual() << endl;
+                } else {
+                    cout << "Conta não encontrada." << endl;
                 }
                 break;
-            case 3:
-                metas.definirMetas();
-                break;
-            case 4:
-                cout << "Adicione a Descricao: ";
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                getline(cin, descricao);
+            }
+            case 2: {
+                int id;
+                cout << "Digite o ID da conta: ";
+                cin >> id;
 
-                cout << "Adicione a Transicao: R$: ";
-                cin >> transicao;
-                conta.adicionar_transacao(descricao, transicao);
+                ContaBancaria* conta = banco.pesquisa(id);
+                if (conta) {
+                    cout << "Historico de transacoes: " << endl;
+                    for (const auto& transacao : conta->obterHistoricoTransacoes()) {
+                        cout << "- " << transacao.first << ": " << transacao.second << endl;
+                    }
+                } else {
+                    cout << "Conta não encontrada." << endl;
+                }
                 break;
-            case 5: {
+            }
+            case 3: {
+                int id;
+                cout << "Digite o ID da conta: ";
+                cin >> id;
+
+                ContaBancaria* conta = banco.pesquisa(id);
+                if (conta) {
+                    cout << "Deseja usar saldo ou cartão de crédito? (0 - Saldo, 1 - Cartão de Crédito): ";
+                    int opcao;
+                    cin >> opcao;
+                    double valor;
+                    string descricao;
+
+                    cout << "Adicione a Descricao: ";
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    getline(cin, descricao);
+
+                    cout << "Adicione o Valor: R$ ";
+                    cin >> valor;
+
+                    if (opcao == 0) {
+                        conta->adicionarTransacao(descricao, valor);
+                    } else {
+                        CartaoDeCredito* cartao = conta->obterCartao();
+                        if (cartao) {
+                            cartao->adicionarDespesa(valor);
+                        } else {
+                            cout << "Nenhum cartão de crédito associado." << endl;
+                        }
+                    }
+                } else {
+                    cout << "Conta não encontrada." << endl;
+                }
+                break;
+            }
+            case 4: {
                 int id;
                 string cliente;
                 cout << "Digite o ID da nova conta: ";
@@ -75,13 +109,22 @@ int main() {
 
                 ContaBancaria* novaConta = banco.criaConta(id, cliente);
                 if (novaConta) {
+                    double saldoInicial;
+                    cout << "Deseja adicionar um saldo inicial à conta? (0 - Não, 1 - Sim): ";
+                    int opcao;
+                    cin >> opcao;
+                    if (opcao == 1) {
+                        cout << "Digite o valor do saldo inicial: R$ ";
+                        cin >> saldoInicial;
+                        novaConta->adicionarTransacao("Saldo Inicial", saldoInicial);
+                    }
                     cout << "Conta criada com sucesso!" << endl;
                 } else {
                     cout << "Erro ao criar a conta. ID pode ser duplicado ou o banco está cheio." << endl;
                 }
                 break;
             }
-            case 6: {
+            case 5: {
                 int id;
                 cout << "Digite o ID da conta a ser pesquisada: ";
                 cin >> id;
@@ -94,10 +137,10 @@ int main() {
                 }
                 break;
             }
-            case 7:
+            case 6:
                 banco.listaContas();
                 break;
-            case 8: {
+            case 7: {
                 int id;
                 cout << "Digite o ID da conta a qual deseja associar o cartao: ";
                 cin >> id;
@@ -129,7 +172,7 @@ int main() {
                 }
                 break;
             }
-            case 9: {
+            case 8: {
                 int id;
                 cout << "Digite o ID da conta para adicionar uma despesa no cartao: ";
                 cin >> id;
@@ -147,7 +190,7 @@ int main() {
                 }
                 break;
             }
-            case 10: {
+            case 9: {
                 int id;
                 cout << "Digite o ID da conta para mostrar informações do cartao: ";
                 cin >> id;

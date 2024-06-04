@@ -7,21 +7,15 @@
 
 class Saldo {
 private:
-    float saldo_atual;
+    double saldo_atual;
     std::map<std::string, double> historico_transacoes;
 
 public:
-    // Construtor para inicializar o saldo e o histórico de transações
-    Saldo(double saldo_inicial);
+    Saldo(double saldo_inicial = 0.0);
 
-    // Função para obter o saldo atual da conta
-    double obter_saldo_atual();
-
-    // Função para adicionar uma nova transação e atualizar o saldo
-    void adicionar_transacao(std::string descricao, double valor);
-
-    // Função para obter o histórico de transações
-    std::map<std::string, double> obter_historico_transacoes();
+    double obter_saldo_atual() const;
+    void adicionar_transacao(const std::string& descricao, double valor);
+    const std::map<std::string, double>& obter_historico_transacoes() const;
 };
 
 #endif

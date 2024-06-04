@@ -18,7 +18,7 @@ ${BUILD}/metas.o: ${INCLUDE}/metas.hpp ${SRC}/metas.cpp
 ${BUILD}/banco.o: ${INCLUDE}/banco.hpp ${SRC}/banco.cpp ${INCLUDE}/contabancaria.hpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/banco.cpp -o ${BUILD}/banco.o
 
-${BUILD}/contabancaria.o: ${INCLUDE}/contabancaria.hpp ${SRC}/contabancaria.cpp
+${BUILD}/contabancaria.o: ${INCLUDE}/contabancaria.hpp ${SRC}/contabancaria.cpp ${INCLUDE}/cartaodecredito.hpp ${INCLUDE}/saldo.hpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/contabancaria.cpp -o ${BUILD}/contabancaria.o
 
 ${BUILD}/cartaodecredito.o: ${INCLUDE}/cartaodecredito.hpp ${SRC}/cartaodecredito.cpp

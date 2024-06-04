@@ -1,4 +1,5 @@
 #include "Banco.hpp"
+#include "Contabancaria.hpp"
 
 Banco::Banco() : numeroDeContas(0) {
     for (int i = 0; i < 20; ++i) {
@@ -20,6 +21,16 @@ ContaBancaria* Banco::criaConta(int id, const std::string &cliente) {
         if (contas[i]->getId() == id) {
             return nullptr;
         }
+    }
+    double saldo_inicial;
+    std::cout << "Deseja adicionar um saldo inicial? (0 - Não, 1 - Sim): ";
+    int opcao;
+    std::cin >> opcao;
+    if (opcao == 1) {
+        std::cout << "Digite o valor do saldo inicial: R$ ";
+        std::cin >> saldo_inicial;
+    } else {
+        saldo_inicial = 0.0;
     }
     contas[numeroDeContas] = new ContaBancaria(id, cliente);
     return contas[numeroDeContas++];
