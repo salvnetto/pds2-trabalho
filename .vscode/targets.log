@@ -8,7 +8,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This program built for i386-pc-mingw32
  
 
-# Make data base, printed on Tue May 28 09:09:03 2024
+# Make data base, printed on Tue Jun 04 06:49:11 2024
 
 # Variables
 
@@ -33,9 +33,10 @@ HOMEDRIVE = C:
 # automatic
 @F = $(notdir $@)
 # automatic
-^D = $(patsubst %/,%,$(dir $^))
+^D  
+= $(patsubst %/,%,$(dir $^))
 # makefile
-CURDIR := c:/Users/Bruno/Desktop/Trabalho dia 28/pds2-trabalho
+CURDIR := c:/Users/Bruno/Desktop/Trabalho dia 04/pds2-trabalho
 # default
 SHELL := sh.exe
 # environment
@@ -61,7 +62,9 @@ PROGRAMDATA = C:\ProgramData
 # environment
 VSCODE_CWD = C:\Users\Bruno\AppData\Local\Programs\Microsoft VS Code
 # environment
-PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Users\Bruno\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Bruno\AppData\Local\Programs\Python\Python312\;C:\Users\Bruno\AppData\Local\Programs\Python\Launcher\;C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps;C:\Users\Bruno\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera\13.0sp1\modelsim_ase\win32aloem;C:\intelFPGA\18.1\modelsim_ase\win32aloem
+PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files\MATLAB\R2024a\runtime\win64;C:\Program Files\MATLAB\R2024a\bin;C:\Users\Bruno\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Bruno\AppData\Local\Programs\Python\Python312\;C:\Users\Bruno\AppData\Local\Programs\Python\Launcher\;C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps;C:\Users\Bruno\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera\13.0sp1\modelsim_ase\win32aloem;C:\intelFPGA\18.1\modelsim_ase\win32aloem
+# environment
+EFC_8284 = 1
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
@@ -78,12 +81,10 @@ NUMBER_OF_PROCESSORS = 12
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives
-# environment
-EFC_12460 = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_10688_PPJJFITXAFZULCFR
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_17096_TIPPNTTIVPJRMEDA
 # environment
 COMPUTERNAME = ASUS
 # environment
@@ -99,8 +100,7 @@ PUBLIC = C:\Users\Public
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Bruno\AppDa 
-ta\Roaming\Code\CachedData\dc96b837cf6bb4af9cd736aa3af08cf8279f7685
+VSCODE_CODE_CACHE_PATH = C:\Users\Bruno\AppData\Roaming\Code\CachedData\dc96b837cf6bb4af9cd736aa3af08cf8279f7685
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -159,8 +159,6 @@ MFLAGS = -Rrqp
 SYSTEMROOT = C:\Windows
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# environment
-VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 +F = $(notdir $+)
 # environment
@@ -198,11 +196,11 @@ PROCESSOR_LEVEL = 6
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 10688
+VSCODE_PID = 17096
 # environment
 USERDOMAIN_ROAMINGPROFILE = ASUS
 # variable set hash-table stats:
-# Load=94/1024=9%, Rehash=0, Collisions=19/143=13%
+# Load=93/1024=9%, Rehash=0, Collisions=19/142=13%
 
 # Pattern-specific Variable Values
 
@@ -210,18 +208,22 @@ USERDOMAIN_ROAMINGPROFILE = ASUS
 
 # Directories
 
+# C:\Program Files\MATLAB\R2024a\bin (key C:/Program Files/MATL 
+AB/R2024a/bin, mtime 1716999570): 19 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1701671350): 28 files, no impossibilities.
 # C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1701671350): 168 files, no impossibilities.
-# . (key c:/Users/Bruno/Desktop/Trabalho dia 28/pds2-trabalho, mtime 1716891478): 9 files, no impossibilities.
+# . (key c:/Users/Bruno/Desktop/Trabalho dia 04/pds2-trabalho, mtime 1717494544): 9 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Python\Launcher\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Launcher/, mtime 1713536008): 5 files, no impossibilities.
 # C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1704228104): 10 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/Bruno/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1715296326): 5 files, no impossibilities.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1709907966): 144 files, no impossibilities.
+# C:\Program Files\MATLAB\R2024a\runtime\win64 (key C:/Program Files/MATLAB/R2024a/runtime/win64, mtime 1716999570): 10 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
 # C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1711458197): 5 files, no impossibilities.
 # C:\Windows (key C:/Windows, mtime 1714986543): 123 files, no impossibilities.
-# C:\altera\13.0sp1\modelsim_ase\win32aloem (key C:/altera/13.0sp1/modelsim_ase/win32aloem, mtime 1712797896): 95 files, no impossibilities.
-# C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps (key C:/Users/Bruno/AppData/Local/Microsoft/WindowsApps, mtime 1716717703): 40 files, no impossibilities.
+# C:\altera\13.0sp1\modelsim_ase\win32aloem (key C:/altera/13.0sp 
+1/modelsim_ase/win32aloem, mtime 1712797896): 95 files, no impossibilities.
+# C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps (key C:/Users/Bruno/AppData/Local/Microsoft/WindowsApps, mtime 1716915843): 40 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Python\Python312\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Python312/, mtime 1713667391): 19 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Python\Python312\Scripts\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Python312/Scripts/, mtime 1713667308): 6 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1709906659): 13 files, no impossibilities.
@@ -230,7 +232,7 @@ USERDOMAIN_ROAMINGPROFILE = ASUS
 # C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1704228401): 5 files, no impossibilities.
 # C:\Program Files (x86)\GnuWin32\bin (key C:/Program Files (x86)/GnuWin32/bin, mtime 1713268064): 5 files, no impossibilities.
 
-# 3810 files, no impossibilities in 19 directories.
+# 3839 files, no impossibilities in 21 directories.
 
 # Implicit Rules
 
@@ -242,7 +244,8 @@ build/main.o: include/saldo.hpp include/metas.hpp src/main.cpp include/banco.hpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `makefile', line 28):
+#  commands to execut 
+e (from `makefile', line 28):
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/main.cpp -o ${BUILD}/main.o
 	
 
@@ -278,7 +281,8 @@ include/banco.hpp:
 # Not a target:
 src/banco.cpp:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Modification ti 
+me never checked.
 #  File has not been updated.
 
 # Not a target:
@@ -304,7 +308,7 @@ build/metas.o: include/metas.hpp src/metas.cpp
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-05-28 09:07:54
+#  Last modified 2024-06-04 06:49:04
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -361,7 +365,8 @@ src/main.cpp:
 # Not a target:
 include/cartaodecredito.hpp:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Modi 
+fication time never checked.
 #  File has not been updated.
 
 # Not a target:
@@ -403,7 +408,7 @@ src/metas.cpp:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue May 28 09:09:03 2024
+# Finished Make data base on Tue Jun 04 06:49:11 2024
 
  
 make.exe: *** No rule to make target `all'.  Stop.

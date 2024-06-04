@@ -19,9 +19,11 @@ float ContaBancaria::getSaldo() const {
     return saldo;
 }
 
-ContaBancaria::ContaBancaria(std::string titular, double saldo)
-    : titular(titular), saldo(saldo), cartaoDeCredito(nullptr) {}
-
+void ContaBancaria::ContaCartao(std::string titular, double saldo){
+    titular = titular;
+    saldo = saldo;
+    cartaoDeCredito = nullptr;
+}
 ContaBancaria::~ContaBancaria() {
     delete cartaoDeCredito;
 }

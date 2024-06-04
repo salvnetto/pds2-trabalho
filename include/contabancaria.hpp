@@ -24,7 +24,7 @@ public:
     int getId() const;
     const std::string& getCliente() const;
     float getSaldo() const;
-    ContaBancaria(std::string titular, double saldo);
+    void ContaCartao(std::string titular, double saldo);
     ~ContaBancaria();
 
 };
