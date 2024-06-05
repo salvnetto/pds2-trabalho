@@ -21,6 +21,14 @@ void menuTransacoes(Conta& minhaConta) {
 
             std::cin >> escolha;
 
+            //evitando repetição caso a escolha nao seja um numero
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+                continue;
+            }
+
             switch (escolha) {
                 case 1: {
                     std::string data, descricao, nomeCartao;
@@ -87,6 +95,13 @@ void menuCartoesDeCredito(Conta& minhaConta) {
             std::cout << "Escolha uma opcao: ";
 
             std::cin >> escolha;
+            //evitando repetição caso a escolha nao seja um numero
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+                continue;
+            }
 
             switch (escolha) {
                 case 1: {
@@ -163,6 +178,14 @@ void menuPrincipal(Conta& minhaConta) {
             std::cout << "Escolha uma opcao: ";
             std::cin >> escolha;
 
+            //evitando repetição caso a escolha nao seja um numero
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+                continue;
+            }
+
             switch (escolha) {
                 case 1:
                     menuTransacoes(minhaConta);
@@ -192,9 +215,18 @@ void menuConta(Usuario& usuario) {
             std::cout << "\nSelecione uma Conta Bancaria:\n";
             std::cout << "1. Selecionar conta\n";
             std::cout << "2. Criar conta\n";
-            std::cout << "3. Sair\n";
+            std::cout << "3. Mostrar Contas Disponiveis\n";
+            std::cout << "4. Sair\n";
             std::cout << "Escolha uma opcao: ";
             std::cin >> escolha;
+
+            //evitando repetição caso a escolha nao seja um numero
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+                continue;
+            }
 
             std::string conta;
             switch (escolha) {
@@ -226,6 +258,9 @@ void menuConta(Usuario& usuario) {
                     }
                     break;
                 case 3:
+                    usuario.mostrarContaBancaria();
+                    break;
+                case 4:
                     std::cout << "Saindo...\n";
                     return;
                 default:
@@ -243,12 +278,19 @@ int main() {
 
     while (true) {
         try {
-            std::cout << "\nBem-vindo:\n";
+            std::cout << "Bem-vindo:\n";
             std::cout << "1. Log In\n";
             std::cout << "2. Cadastrar\n";
             std::cout << "3. Sair\n";
             std::cout << "Escolha uma opcao: ";
             std::cin >> escolha;
+            //evitando repetição caso a escolha nao seja um numero
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+                continue;
+            }
 
             bool usuario_encontrado = false;
             std::string nome_usuario;
@@ -288,6 +330,7 @@ int main() {
                     return 0;
                 default:
                     std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+                    break;
             }
         } catch (const std::invalid_argument& e) {
             std::cout << "Erro: " << e.what() << std::endl;

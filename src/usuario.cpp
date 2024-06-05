@@ -32,3 +32,16 @@ Conta* Usuario::encontrarContaBancaria(std::string nome_conta) {
     }
     return nullptr;
 }
+
+void Usuario::mostrarContaBancaria(){
+    if(contas.empty()){
+        std::cout << "Nennhuma conta encontrada neste usuario" << std::endl;
+        return;
+    }
+    std::cout << "---\n";
+    for(auto& conta : contas){
+        std::cout << "Conta: " << conta->getNomeConta() << std::endl;
+        conta->getSaldo();
+        std::cout << "---\n";
+    }
+}

@@ -24,6 +24,7 @@ public:
 
     void adicionarContaBancaria(std::string nome_conta, double saldo);
     Conta* encontrarContaBancaria(std::string nome_conta);
+    void mostrarContaBancaria();
 };
 
 #endif // USUARIO_H
