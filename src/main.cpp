@@ -106,14 +106,17 @@ void menuCartoesDeCredito(Conta& minhaConta) {
             switch (escolha) {
                 case 1: {
                     std::string nomeCartao;
+                    std::string numeroCartao;
                     double limite;
                     std::cout << "\nAdicionar Cartao\n";
                     std::cout << "Nome do Cartao: ";
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     std::getline(std::cin, nomeCartao);
+                    std::cout << "Numero do Cartao: ";
+                    std::getline(std::cin, numeroCartao);
                     std::cout << "Limite do Cartao: ";
                     std::cin >> limite;
-                    minhaConta.adicionarCartaoDeCredito(nomeCartao, limite);
+                    minhaConta.adicionarCartaoDeCredito(nomeCartao, limite,numeroCartao);
                     break;
                 }
                 case 2: {
@@ -215,7 +218,7 @@ void menuConta(Usuario& usuario) {
             std::cout << "\nSelecione uma Conta Bancaria:\n";
             std::cout << "1. Selecionar conta\n";
             std::cout << "2. Criar conta\n";
-            std::cout << "3. Mostrar Contas Disponiveis\n";
+            std::cout << "3. Mostrar contas disponiveis\n";
             std::cout << "4. Sair\n";
             std::cout << "Escolha uma opcao: ";
             std::cin >> escolha;

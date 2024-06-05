@@ -3,12 +3,13 @@
 #include <algorithm>
 #include <iostream>
 
-CartaoDeCredito::CartaoDeCredito(std::string nome_cartao, double limite) {
+CartaoDeCredito::CartaoDeCredito(std::string nome_cartao, double limite, std::string numero_cartao) {
     if (limite < 0) {
         throw std::invalid_argument("O limite do cartao de credito nao pode ser negativo.");
     }
     this->nome_cartao = nome_cartao;
     this->limite = limite;
+    this->numero_cartao = numero_cartao;
     this->fatura_mensal = 0;
 }
 
@@ -29,6 +30,10 @@ void CartaoDeCredito::setLimite(double limite) {
 
 double CartaoDeCredito::getLimite() const {
     return limite;
+}
+
+std::string CartaoDeCredito::getNumeroCartao() const {
+    return numero_cartao;
 }
 
 Despesa CartaoDeCredito::adicionarCompra(std::string data, double valor, std::string descricao) {

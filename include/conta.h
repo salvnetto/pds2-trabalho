@@ -22,7 +22,7 @@ public:
     void setSaldo(double saldo);
     void getSaldo() const;
 
-    void adicionarCartaoDeCredito(std::string nome_cartao, double limite);
+    void adicionarCartaoDeCredito(std::string nome_cartao, double limite, std::string numero_cartao);
     CartaoDeCredito* encontrarCartaoDeCredito(std::string nome_cartao);
 
     void adicionarTransacao(std::string tipo, bool cartao_de_credito, std::string nome_cartao, std::string data, double valor, std::string descricao);

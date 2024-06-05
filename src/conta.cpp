@@ -26,8 +26,8 @@ void Conta::getSaldo() const {
     std::cout << "Saldo da conta: " << saldo << std::endl;
 }
 
-void Conta::adicionarCartaoDeCredito(std::string nome_cartao, double limite) {
-    CartaoDeCredito novoCartao(nome_cartao, limite);
+void Conta::adicionarCartaoDeCredito(std::string nome_cartao, double limite,std::string numero_cartao) {
+    CartaoDeCredito novoCartao(nome_cartao, limite,numero_cartao);
     cartoes_de_credito.push_back(novoCartao);
 }
 
