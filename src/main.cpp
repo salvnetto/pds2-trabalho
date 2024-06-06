@@ -1,4 +1,5 @@
 #include "usuario.h"
+#include "orcamento.h"
 
 #include <iostream>
 #include <string>
@@ -6,6 +7,66 @@
 #include <limits>
 #include <sstream>
 #include <map>
+
+void menuMetasEconomia(Conta& minhaConta) {
+    int escolha;
+    while (true) {
+        try {
+            std::cout << "\nMenu de Metas de Economia:\n";
+            std::cout << "1. Adicionar Meta de Economia\n";
+            std::cout << "2. Ver Metas de Economia\n";
+            std::cout << "3. Atualizar Economia\n";
+            std::cout << "3. Voltar\n";
+            std::cout << "Escolha uma opcao: ";
+
+            std::cin >> escolha;
+
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+                continue;
+            }
+
+            std::string objetivo;
+            double valorAlvo, valorAtual;           
+            switch (escolha) {
+                case 1: {
+                    std::cout << "\nAdicionar Meta de Economia\n";
+                    std::cout << "Objetivo: ";
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::getline(std::cin, objetivo);
+                    std::cout << "Valor Alvo: ";
+                    std::cin >> valorAlvo;
+                    std::cout << "Valor Atual: ";
+                    std::cin >> valorAtual;
+                    minhaConta.adicionarMetaEconomia(objetivo, valorAlvo, valorAtual);
+                    break;
+                }
+                case 2: {
+                    minhaConta.getMetasEconomia();
+                    break;
+                }
+                case 3: {
+                    std::cout << "\nAtualizar Valor da Meta de Economia\n";
+                    std::cout << "Objetivo: ";
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::getline(std::cin, objetivo);
+                    std::cout << "Valor Atual: ";
+                    std::cin >> valorAtual;
+                    minhaConta.atualizarValorAtualMetaEconomia(objetivo, valorAtual);
+                    break;
+                }
+                case 4:
+                    return;
+                default:
+                    std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+            }
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro: " << e.what() << std::endl;
+        }
+    }
+}
 
 void menuInvestimentos(Conta& minhaConta) {
     int escolha;
@@ -233,7 +294,8 @@ void menuPrincipal(Conta& minhaConta) {
             std::cout << "2. Cartões de Credito\n";
             std::cout << "3. Saldo da Conta\n";
             std::cout << "4. Investimentos\n";
-            std::cout << "5. Sair\n";
+            std::cout << "5. Metas de Economia\n";
+            std::cout << "6. Sair\n";
             std::cout << "Escolha uma opcao: ";
             std::cin >> escolha;
 
@@ -259,6 +321,9 @@ void menuPrincipal(Conta& minhaConta) {
                     menuInvestimentos(minhaConta);
                     break;
                 case 5:
+                    menuMetasEconomia(minhaConta);
+                    break;
+                case 6:
                     std::cout << "Saindo...\n";
                     return; 
                 default:

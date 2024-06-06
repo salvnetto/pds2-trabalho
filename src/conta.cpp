@@ -111,3 +111,31 @@ void Conta::verLucroTotal() {
         std::cout << "Nome: " << investimento.getNome() << ", Lucro Total $" << investimento.calcularLucroTotal() << std::endl;
     }
 }
+
+
+void Conta::adicionarMetaEconomia(std::string obj, double alvo, double atual) {
+    MetaEconomia nova_meta(obj, alvo, atual);
+    metas_economia.push_back(nova_meta);
+}
+
+void Conta::getMetasEconomia() const {
+    if (metas_economia.empty()) {
+        std::cout << "Nenhuma meta de economia definida.\n";
+    } else {
+        std::cout << "Metas de Economia:\n";
+        for (const auto& meta : metas_economia) {
+            std::cout << "Objetivo: " << meta.getObjetivo() << ", Valor Alvo: " << meta.getValorAlvo() << ", Valor Atual: " << meta.getValorAtual() << std::endl;
+        }
+    }
+}
+
+void Conta::atualizarValorAtualMetaEconomia(const std::string& objetivo, double novoValorAtual) {
+    for (auto& meta : metas_economia) {
+        if (meta.getObjetivo() == objetivo) {
+            meta.setValorAtual(novoValorAtual);
+            std::cout << "Valor atual da meta '" << objetivo << "' atualizado para " << novoValorAtual << ".\n";
+            return;
+        }
+    }
+    std::cout << "Meta de economia com o objetivo '" << objetivo << "' nao encontrada.\n";
+}

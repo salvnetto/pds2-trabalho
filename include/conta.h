@@ -6,6 +6,7 @@
 #include <memory>
 #include "cartao_credito.h"
 #include "investimento.h"
+#include "orcamento.h"
 
 class Conta {
 private:
@@ -14,6 +15,7 @@ private:
     std::vector<CartaoDeCredito> cartoes_de_credito;
     std::vector<std::unique_ptr<Transacao>> transacoes;
     std::vector<Investimento> investimentos;
+    std::vector<MetaEconomia> metas_economia;
 
 public:
     Conta(std::string nome_conta, double saldo);
@@ -38,6 +40,9 @@ public:
     void getInvestimentos();
     void verLucroTotal();
 
+    void adicionarMetaEconomia(std::string obj, double alvo, double atual); 
+    void getMetasEconomia() const;
+    void atualizarValorAtualMetaEconomia(const std::string& objetivo, double novoValorAtual);
 };
 
 #endif // CONTA_H
