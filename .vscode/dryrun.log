@@ -1,5 +1,13 @@
 make.exe --dry-run --keep-going --print-directory
 make.exe: Entering directory `c:/Users/Bruno/Desktop/trabalhopds2/pds2-trabalho'
+g++ -std=c++14 -I ./include/ -c ./src/cartao_credito.cpp -o ./build/cartao_credito.o
+ 
+g++ -std=c++14 -I ./include/ -c ./src/conta.cpp -o ./build/conta.o
+ 
+g++ -std=c++14 -I ./include/ -c ./src/metas.cpp -o ./build/metas.o
+ 
+g++ -std=c++14 -I ./include/ -c ./src/validador.cpp -o ./build/validador.o
+g++ -std=c++14 -I ./include/ -c ./src/main.cpp -o ./build/main.o
 g++ -std=c++14 ./build/cartao_credito.o ./build/conta.o ./build/investimento.o ./build/metas.o ./build/transacao.o ./build/usuario.o ./build/validador.o ./build/main.o -o ./build/prog
 make.exe: Leaving directory `c:/Users/Bruno/Desktop/trabalhopds2/pds2-trabalho'
  
