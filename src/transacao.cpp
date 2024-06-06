@@ -1,4 +1,4 @@
-#include "transacao.h"
+#include "transacao.hpp"
 
 // Implementação da classe Transacao
 Transacao::Transacao(std::string data, double valor, std::string descricao) {

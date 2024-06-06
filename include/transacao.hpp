@@ -1,5 +1,5 @@
-#ifndef TRANSACOES_H
-#define TRANSACOES_H
+#ifndef TRANSACOES_HPP
+#define TRANSACOES_HPP
 
 #include <string>
 #include <iostream>

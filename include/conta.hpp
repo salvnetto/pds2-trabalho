@@ -1,12 +1,12 @@
-#ifndef CONTA_H
-#define CONTA_H
+#ifndef CONTA_HPP
+#define CONTA_HPP
 
 #include <string>
 #include <vector>
 #include <memory>
-#include "cartao_credito.h"
-#include "investimento.h"
-#include "metas.h"
+#include "cartao_credito.hpp"
+#include "investimento.hpp"
+#include "metas.hpp"
 
 class Conta {
 private:

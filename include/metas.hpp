@@ -1,5 +1,5 @@
-#ifndef METAS_H
-#define METAS_H
+#ifndef METAS_HPP
+#define METAS_HPP
 
 #include <string>
 

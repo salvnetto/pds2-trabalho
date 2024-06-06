@@ -6,29 +6,32 @@ BUILD = ./build
 SRC = ./src
 INCLUDE = ./include
 
-${BUILD}/${TARGET}: ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/main.o
-	${CC} ${CFLAGS} ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/main.o -o ${BUILD}/${TARGET}
+${BUILD}/${TARGET}: ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/validador.o ${BUILD}/main.o
+	${CC} ${CFLAGS} ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/validador.o ${BUILD}/main.o -o ${BUILD}/${TARGET}
 
-${BUILD}/cartao_credito.o: ${INCLUDE}/cartao_credito.h ${SRC}/cartao_credito.cpp
+${BUILD}/cartao_credito.o: ${INCLUDE}/cartao_credito.hpp ${SRC}/cartao_credito.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/cartao_credito.cpp -o ${BUILD}/cartao_credito.o
 
-${BUILD}/conta.o: ${INCLUDE}/conta.h ${SRC}/conta.cpp
+${BUILD}/conta.o: ${INCLUDE}/conta.hpp ${SRC}/conta.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/conta.cpp -o ${BUILD}/conta.o
 
-${BUILD}/investimento.o: ${INCLUDE}/investimento.h ${SRC}/investimento.cpp
+${BUILD}/investimento.o: ${INCLUDE}/investimento.hpp ${SRC}/investimento.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/investimento.cpp -o ${BUILD}/investimento.o
 
-${BUILD}/metas.o: ${INCLUDE}/metas.h ${SRC}/metas.cpp
+${BUILD}/metas.o: ${INCLUDE}/metas.hpp ${SRC}/metas.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/metas.cpp -o ${BUILD}/metas.o
 
-${BUILD}/transacao.o: ${INCLUDE}/transacao.h ${SRC}/transacao.cpp
+${BUILD}/transacao.o: ${INCLUDE}/transacao.hpp ${SRC}/transacao.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/transacao.cpp -o ${BUILD}/transacao.o
 
-${BUILD}/usuario.o: ${INCLUDE}/usuario.h ${SRC}/usuario.cpp
+${BUILD}/usuario.o: ${INCLUDE}/usuario.hpp ${SRC}/usuario.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/usuario.cpp -o ${BUILD}/usuario.o
 
-${BUILD}/main.o: ${INCLUDE}/cartao_credito.h ${INCLUDE}/conta.h ${INCLUDE}/transacao.h ${INCLUDE}/usuario.h ${SRC}/main.cpp
+${BUILD}/main.o: ${INCLUDE}/cartao_credito.hpp ${INCLUDE}/conta.hpp ${INCLUDE}/transacao.hpp ${INCLUDE}/usuario.hpp ${INCLUDE}/validador.hpp ${SRC}/main.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/main.cpp -o ${BUILD}/main.o
+
+${BUILD}/validador.o: ${INCLUDE}/validador.hpp ${INCLUDE}/usuario.hpp ${SRC}/validador.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/validador.cpp -o ${BUILD}/validador.o
 
 builder:
 	if not exist build mkdir build

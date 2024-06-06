@@ -1,10 +1,10 @@
-#ifndef USUARIO_H
-#define USUARIO_H
+#ifndef USUARIO_HPP
+#define USUARIO_HPP
 
 #include <string>
 #include <vector>
 #include <memory>
-#include "conta.h"
+#include "conta.hpp"
 
 class Usuario {
 private:

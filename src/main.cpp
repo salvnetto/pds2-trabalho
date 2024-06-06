@@ -1,4 +1,5 @@
-#include "usuario.h"
+#include "usuario.hpp"
+#include "validador.hpp"
 
 #include <iostream>
 #include <string>
@@ -444,24 +445,30 @@ int main() {
                     std::cout << "\nCadastrar\n";
                     std::cout << "Nome de Usuario: ";
                     std::cin >> nome_usuario;
+                    if (!Validador::validarNomeUsuario(nome_usuario, usuarios)) {
+                        std::cout << "Nome de usuario invalido ou já existe. Lembre de nao usar numeros no nome. \nPor favor, tente novamente.\n";
+                        continue;
+                    }
                     std::cout << "Senha: ";
                     std::cin >> senha;
-                    {
-                        Usuario novo_usuario(nome_usuario, senha);
-                        usuarios.push_back(novo_usuario);
+                    if (!Validador::validarSenha(senha)) {
+                        std::cout << "Senha invalida. A senha deve conter pelo menos uma letra e um numero. Por favor, tente novamente.\n";
+                        continue;
                     }
+                    usuarios.emplace_back(nome_usuario, senha);
+                    std::cout << "Usuario cadastrado com sucesso!\n";
                     break;
                 case 3:
                     std::cout << "Saindo...\n";
                     return 0;
                 default:
                     std::cout << "Opcao invalida! Por favor, tente novamente.\n";
-                    break;
             }
-        } catch (const std::invalid_argument& e) {
-            std::cout << "Erro: " << e.what() << std::endl;
+        } catch (const std::exception& e) {
+            std::cerr << "Erro: " << e.what() << "\n";
         }
     }
+
     return 0;
 }
                    
