@@ -1,4 +1,4 @@
-#include "investimento.h"
+#include "investimento.hpp"
 
 Investimento::Investimento(std::string nome, double valorAtual, double valorInicial, double taxaRetorno) {
     this->nome = nome;

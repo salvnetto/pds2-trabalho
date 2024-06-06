@@ -1,5 +1,5 @@
-#ifndef ORCAMENTO_H
-#define ORCAMENTO_H
+#ifndef ORCAMENTO_HPP
+#define ORCAMENTO_HPP
 
 #include <string>
 

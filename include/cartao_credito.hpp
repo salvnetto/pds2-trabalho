@@ -1,9 +1,9 @@
-#ifndef CARTAODECREDITO_H
-#define CARTAODECREDITO_H
+#ifndef CARTAODECREDITO_HPP
+#define CARTAODECREDITO_HPP
 
 #include <string>
 #include <vector>
-#include "transacao.h"
+#include "transacao.hpp"
 
 class CartaoDeCredito {
 private:

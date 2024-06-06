@@ -1,4 +1,4 @@
-#include "orcamento.h"
+#include "orcamento.hpp"
 
 MetaEconomia::MetaEconomia(std::string obj, double alvo, double atual)
     : objetivo(obj), valorAlvo(alvo), valorAtual(atual) {}

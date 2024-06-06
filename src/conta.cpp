@@ -1,5 +1,5 @@
-#include "conta.h"
-#include "investimento.h"
+#include "conta.hpp"
+#include "investimento.hpp"
 #include <algorithm>
 
 Conta::Conta(std::string nome_conta, double saldo) : nome_conta(nome_conta), saldo(saldo) {

@@ -1,4 +1,4 @@
-#include "usuario.h"
+#include "usuario.hpp"
 #include <stdexcept>
 
 Usuario::Usuario(std::string nome_usuario, std::string senha) : nome_usuario(nome_usuario), senha(senha) {}

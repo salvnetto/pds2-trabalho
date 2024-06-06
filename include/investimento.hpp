@@ -1,5 +1,5 @@
-#ifndef INVESTIMENTO_H
-#define INVESTIMENTO_H
+#ifndef INVESTIMENTO_HPP
+#define INVESTIMENTO_HPP
 
 #include <iostream>
 
