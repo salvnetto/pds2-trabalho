@@ -232,7 +232,8 @@ void menuPrincipal(Conta& minhaConta) {
             std::cout << "1. Transacões\n";
             std::cout << "2. Cartões de Credito\n";
             std::cout << "3. Saldo da Conta\n";
-            std::cout << "4. Sair\n";
+            std::cout << "4. Investimentos\n";
+            std::cout << "5. Sair\n";
             std::cout << "Escolha uma opcao: ";
             std::cin >> escolha;
 
@@ -255,6 +256,9 @@ void menuPrincipal(Conta& minhaConta) {
                     minhaConta.getSaldo();
                     break;
                 case 4:
+                    menuInvestimentos(minhaConta);
+                    break;
+                case 5:
                     std::cout << "Saindo...\n";
                     return; 
                 default:
