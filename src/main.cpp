@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 #include "usuario.hpp"
 #include "orcamento.hpp"
 #include "validador.hpp"
+=======
+#include "usuario.h"
+>>>>>>> 316f9403b62fc1581f44ab1a99ce9fcb3a15edda
 
 #include <iostream>
 #include <string>

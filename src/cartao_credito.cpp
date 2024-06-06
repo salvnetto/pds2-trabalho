@@ -11,7 +11,7 @@ CartaoDeCredito::CartaoDeCredito(std::string nome_cartao, double limite, std::st
     this->numero_cartao = numero_cartao;
     this->fatura_mensal = 0;
 }
-CartaoDeCredito::~CartaoDeCredito(){}
+//CartaoDeCredito::~CartaoDeCredito(){}
 
 void CartaoDeCredito::setNomeCartao(std::string nome_cartao) {
     this->nome_cartao = nome_cartao;

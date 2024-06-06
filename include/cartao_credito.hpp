@@ -18,7 +18,7 @@ private:
 
 public:
     CartaoDeCredito(std::string nome_cartao, double limite, std::string numero_cartao);
-    ~CartaoDeCredito();
+    //~CartaoDeCredito();
 
     void setNomeCartao(std::string nome_cartao);
     std::string getNomeCartao() const;

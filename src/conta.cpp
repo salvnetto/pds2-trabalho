@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 #include "conta.hpp"
 #include "investimento.hpp"
+=======
+#include "conta.h"
+>>>>>>> 316f9403b62fc1581f44ab1a99ce9fcb3a15edda
 #include <algorithm>
 
 Conta::Conta(std::string nome_conta, double saldo) : nome_conta(nome_conta), saldo(saldo) {
@@ -7,7 +11,7 @@ Conta::Conta(std::string nome_conta, double saldo) : nome_conta(nome_conta), sal
         throw std::invalid_argument("O saldo da conta nao pode ser negativo.");
     }
 }
-Conta::~Conta(){}
+//Conta::~Conta(){}
 
 void Conta::setNomeConta(std::string nome_conta) {
     this->nome_conta = nome_conta;

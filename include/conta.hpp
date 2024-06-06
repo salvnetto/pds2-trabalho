@@ -4,9 +4,15 @@
 #include <string>
 #include <vector>
 #include <memory>
+<<<<<<< HEAD:include/conta.hpp
 #include "cartao_credito.hpp"
 #include "investimento.hpp"
 #include "orcamento.hpp"
+=======
+#include "cartao_credito.h"
+#include "investimento.h"
+#include "metas.h"
+>>>>>>> 316f9403b62fc1581f44ab1a99ce9fcb3a15edda:include/conta.h
 
 class Conta {
 private:
@@ -19,7 +25,7 @@ private:
 
 public:
     Conta(std::string nome_conta, double saldo);
-    ~Conta();
+    //~Conta();
 
     void setNomeConta(std::string nome_conta);
     std::string getNomeConta() const;
