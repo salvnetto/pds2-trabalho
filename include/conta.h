@@ -6,7 +6,7 @@
 #include <memory>
 #include "cartao_credito.h"
 #include "investimento.h"
-#include "orcamento.h"
+#include "metas.h"
 
 class Conta {
 private:
@@ -19,7 +19,7 @@ private:
 
 public:
     Conta(std::string nome_conta, double saldo);
-    ~Conta();
+    //~Conta();
 
     void setNomeConta(std::string nome_conta);
     std::string getNomeConta() const;

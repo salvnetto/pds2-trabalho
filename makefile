@@ -6,14 +6,20 @@ BUILD = ./build
 SRC = ./src
 INCLUDE = ./include
 
-${BUILD}/${TARGET}: ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/main.o
-	${CC} ${CFLAGS} ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/main.o -o ${BUILD}/${TARGET}
+${BUILD}/${TARGET}: ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/main.o
+	${CC} ${CFLAGS} ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/main.o -o ${BUILD}/${TARGET}
 
 ${BUILD}/cartao_credito.o: ${INCLUDE}/cartao_credito.h ${SRC}/cartao_credito.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/cartao_credito.cpp -o ${BUILD}/cartao_credito.o
 
 ${BUILD}/conta.o: ${INCLUDE}/conta.h ${SRC}/conta.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/conta.cpp -o ${BUILD}/conta.o
+
+${BUILD}/investimento.o: ${INCLUDE}/investimento.h ${SRC}/investimento.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/investimento.cpp -o ${BUILD}/investimento.o
+
+${BUILD}/metas.o: ${INCLUDE}/metas.h ${SRC}/metas.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/metas.cpp -o ${BUILD}/metas.o
 
 ${BUILD}/transacao.o: ${INCLUDE}/transacao.h ${SRC}/transacao.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/transacao.cpp -o ${BUILD}/transacao.o

@@ -1,5 +1,5 @@
-#ifndef ORCAMENTO_H
-#define ORCAMENTO_H
+#ifndef METAS_H
+#define METAS_H
 
 #include <string>
 
@@ -21,4 +21,4 @@ public:
     double progresso() const;
 };
 
-#endif // ORCAMENTO_H
+#endif // METAS_H
