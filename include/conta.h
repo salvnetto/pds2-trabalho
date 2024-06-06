@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 #include "cartao_credito.h"
+#include "investimento.h"
 
 class Conta {
 private:
@@ -12,9 +13,11 @@ private:
     double saldo;
     std::vector<CartaoDeCredito> cartoes_de_credito;
     std::vector<std::unique_ptr<Transacao>> transacoes;
+    std::vector<Investimento> investimentos;
 
 public:
     Conta(std::string nome_conta, double saldo);
+    ~Conta();
 
     void setNomeConta(std::string nome_conta);
     std::string getNomeConta() const;
@@ -30,6 +33,11 @@ public:
     void excluirCartaoDeCredito(std::string nome_cartao);
     void getHistoricoDeTransacoes() const;
     void getHistoricoDeTransacoesCartaoDeCredito() const;
+
+    void adicionarInvestimento(std::string nome, double valor_atual, double valor_inicial, double taxa_retorno);
+    void getInvestimentos();
+    void verLucroTotal();
+
 };
 
 #endif // CONTA_H

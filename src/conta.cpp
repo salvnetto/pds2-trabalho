@@ -1,4 +1,5 @@
-#include "Conta.h"
+#include "conta.h"
+#include "investimento.h"
 #include <algorithm>
 
 Conta::Conta(std::string nome_conta, double saldo) : nome_conta(nome_conta), saldo(saldo) {
@@ -6,6 +7,7 @@ Conta::Conta(std::string nome_conta, double saldo) : nome_conta(nome_conta), sal
         throw std::invalid_argument("O saldo da conta nao pode ser negativo.");
     }
 }
+Conta::~Conta(){}
 
 void Conta::setNomeConta(std::string nome_conta) {
     this->nome_conta = nome_conta;
@@ -88,5 +90,24 @@ void Conta::getHistoricoDeTransacoesCartaoDeCredito() const {
         std::cout << "Histórico de Transacões:\n";
         cartao.relatorioDespesas();
         std::cout << std::endl;
+    }
+}
+
+
+void Conta::adicionarInvestimento(std::string nome, double valor_atual, double valor_inicial, double taxa_retorno) {
+    Investimento novo_investimento(nome, valor_atual, valor_inicial, taxa_retorno);
+    investimentos.push_back(novo_investimento);
+}
+
+void Conta::getInvestimentos() {
+    std::cout << "\nInvestimentos:\n";
+    for (auto& investimento : investimentos) {
+        std::cout << "Nome: " << investimento.getNome() << ", Valor Atual: $" << investimento.getValorAtual() << std::endl;
+    }
+}
+
+void Conta::verLucroTotal() {
+    for (auto& investimento : investimentos) {
+        std::cout << "Nome: " << investimento.getNome() << ", Lucro Total $" << investimento.calcularLucroTotal() << std::endl;
     }
 }

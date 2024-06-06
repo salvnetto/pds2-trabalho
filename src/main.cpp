@@ -7,6 +7,61 @@
 #include <sstream>
 #include <map>
 
+void menuInvestimentos(Conta& minhaConta) {
+    int escolha;
+    while (true) {
+        try {
+            std::cout << "\nMenu de Investimentos:\n";
+            std::cout << "1. Adicionar Investimento\n";
+            std::cout << "2. Ver Investimentos\n";
+            std::cout << "3. Ver Lucro Total\n";
+            std::cout << "3. Voltar\n";
+            std::cout << "Escolha uma opcao: ";
+
+            std::cin >> escolha;
+
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+                continue;
+            }
+
+            switch (escolha) {
+                case 1: {
+                    std::string nome;
+                    double valorAtual, valorInicial, taxaRetorno;
+                    std::cout << "\nAdicionar Investimento\n";
+                    std::cout << "Nome do Investimento: ";
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::getline(std::cin, nome);
+                    std::cout << "Valor Atual: ";
+                    std::cin >> valorAtual;
+                    std::cout << "Valor Inicial: ";
+                    std::cin >> valorInicial;
+                    std::cout << "Taxa de Retorno (decimal): ";
+                    std::cin >> taxaRetorno;
+                    minhaConta.adicionarInvestimento(nome, valorAtual, valorInicial, taxaRetorno);
+                    break;
+                }
+                case 2: {
+                    minhaConta.getInvestimentos();
+                    break;
+                }
+                case 3: {
+                    minhaConta.verLucroTotal();
+                    break;
+                }
+                case 4:
+                    return;
+                default:
+                    std::cout << "Opcao invalida! Por favor, tente novamente.\n";
+            }
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro: " << e.what() << std::endl;
+        }
+    }
+}
 
 void menuTransacoes(Conta& minhaConta) {
     int escolha;
