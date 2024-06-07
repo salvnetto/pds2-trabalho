@@ -16,7 +16,7 @@ void menuMetasEconomia(Conta& minhaConta) {
             std::cout << "1. Adicionar Meta de Economia\n";
             std::cout << "2. Ver Metas de Economia\n";
             std::cout << "3. Atualizar Economia\n";
-            std::cout << "3. Voltar\n";
+            std::cout << "4. Voltar\n";
             std::cout << "Escolha uma opcao: ";
 
             std::cin >> escolha;
@@ -76,7 +76,7 @@ void menuInvestimentos(Conta& minhaConta) {
             std::cout << "1. Adicionar Investimento\n";
             std::cout << "2. Ver Investimentos\n";
             std::cout << "3. Ver Lucro Total\n";
-            std::cout << "3. Voltar\n";
+            std::cout << "4. Voltar\n";
             std::cout << "Escolha uma opcao: ";
 
             std::cin >> escolha;
