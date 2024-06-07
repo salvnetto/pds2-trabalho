@@ -19,7 +19,7 @@ private:
 
 public:
     Conta(std::string nome_conta, double saldo);
-    //~Conta();
+    ~Conta(){};
 
     void setNomeConta(std::string nome_conta);
     std::string getNomeConta() const;

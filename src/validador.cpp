@@ -34,3 +34,28 @@ bool Validador::validarSenha(const std::string& senha) {
     }
     return has_letter && has_digit;
 }
+std::string Encriptador::encriptar(const std::string& senha){
+    std::string senha_encriptada = senha;
+    int num = 2;
+    for (char& c : senha_encriptada) {
+        if (isalpha(c)) {
+            char base = islower(c) ? 'a' : 'A';
+            c = (c - base + num) % 26 + base;
+        }
+    }
+
+    return senha_encriptada;
+};
+
+std::string Encriptador::descriptar(const std::string& senha_encriptada){
+    std::string senha_desencriptada = senha_encriptada;
+    int num = 2;
+    for (char& c : senha_desencriptada) {
+        if (isalpha(c)) {
+            char base = islower(c) ? 'a' : 'A';
+            c = (c - base - num + 26) % 26 + base;
+        }
+    }
+
+    return senha_desencriptada;
+};

@@ -429,8 +429,9 @@ int main() {
                     std::cin >> nome_usuario;
                     std::cout << "Senha: ";
                     std::cin >> senha;
+
                     for (auto& usuario : usuarios) {
-                        if (usuario.getNomeUsuario() == nome_usuario && usuario.validarSenha(senha)) {
+                        if (usuario.getNomeUsuario() == Encriptador::encriptar(nome_usuario) && usuario.validarSenha(Encriptador::encriptar(senha))) {
                             std::cout << "Login realizado com sucesso!" << std::endl;
                             menuConta(usuario);
                             usuario_encontrado = true;
@@ -455,6 +456,8 @@ int main() {
                         std::cout << "Senha invalida. A senha deve conter pelo menos uma letra e um numero. Por favor, tente novamente.\n";
                         continue;
                     }
+                    nome_usuario = Encriptador::encriptar(nome_usuario);
+                    senha = Encriptador::encriptar(senha);
                     usuarios.emplace_back(nome_usuario, senha);
                     std::cout << "Usuario cadastrado com sucesso!\n";
                     break;
