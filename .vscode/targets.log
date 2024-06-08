@@ -8,7 +8,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This program built for i386-pc-mingw32
  
 
-# Make data base, printed on Fri Jun 07 21:41:55 2024
+# Make data base, printed on Sat Jun 08 15:01:37 2024
 
 # Variables
 
@@ -33,9 +33,10 @@ HOMEDRIVE = C:
 # automatic
 @F = $(notdir $@)
 # automatic
-^D = $(patsubst %/,%,$(dir $^))
+^D = $(patsubst % 
+/,%,$(dir $^))
 # makefile
-CURDIR := c:/Users/Bruno/Videos/Testte/pds2-trabalho
+CURDIR := c:/Users/Bruno/Music/Vamos la ne galera/pds2-trabalho
 # default
 SHELL := sh.exe
 # environment
@@ -50,8 +51,7 @@ ONEDRIVE = C:\Users\Bruno\OneDrive
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # makefile (from `makefile', line 1)
 MAKEFILE_LIST :=  makefile
-# 
- environment
+# environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
 TMP = C:\Users\Bruno\AppData\Local\Temp
@@ -82,7 +82,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5380_UXNWGMQVAICNJBQU
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_21408_NKYCNOVJFERHUARG
 # environment
 COMPUTERNAME = ASUS
 # environment
@@ -162,8 +162,6 @@ SYSTEMROOT = C:\Windows
 # environment
 APPDATA = C:\Users\Bruno\AppData\Roaming
 # environment
-__COMPAT_LAYER = DetectorsAppHealth
-# environment
 TEMP = C:\Users\Bruno\AppData\Local\Temp
 # environment
 COMSPEC = C:\Windows\system32\cmd.exe
@@ -184,10 +182,12 @@ SUFFIXES :=
 # environment
 SYSTEMDRIVE = C:
 # environment
+EFC_5628 = 1
+# environment
 SESSIONNAME = Console
 # environment
-PROCESSOR 
-_REVISION = 9a03
+PROCESSOR_REVISION = 
+ 9a03
 # environment
 MAKELEVEL := 0
 # environment
@@ -197,13 +197,11 @@ PROCESSOR_LEVEL = 6
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 5380
-# environment
-EFC_20272 = 1
+VSCODE_PID = 21408
 # environment
 USERDOMAIN_ROAMINGPROFILE = ASUS
 # variable set hash-table stats:
-# Load=94/1024=9%, Rehash=0, Collisions=23/153=15%
+# Load=93/1024=9%, Rehash=0, Collisions=23/152=15%
 
 # Pattern-specific Variable Values
 
@@ -214,7 +212,7 @@ USERDOMAIN_ROAMINGPROFILE = ASUS
 # C:\Program Files\MATLAB\R2024a\bin (key C:/Program Files/MATLAB/R2024a/bin, mtime 1716999570): 19 files, no impossibilities.
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1701671350): 28 files, no impossibilities.
 # C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1701671350): 168 files, no impossibilities.
-# . (key c:/Users/Bruno/Videos/Testte/pds2-trabalho, mtime 1717807308): 11 files, no impossibilities.
+# . (key c:/Users/Bruno/Music/Vamos la ne galera/pds2-trabalho, mtime 1717869691): 11 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Python\Launcher\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Launcher/, mtime 1713536008): 5 files, no impossibilities.
 # C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1704228104): 10 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/Bruno/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1717633649): 5 files, no impossibilities.
@@ -223,15 +221,16 @@ USERDOMAIN_ROAMINGPROFILE = ASUS
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
 # C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1711458197): 5 files, no impossibilities.
 # C:\Windows (key C:/Windows, mtime 1717765631): 126 files, no impossibilities.
-# C:\altera\13.0sp1\modelsim_ase\win32aloem (key C:/altera/13.0sp1/model 
-sim_ase/win32aloem, mtime 1712797896): 95 files, no impossibilities.
-# C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps (key C:/Users/Bruno/AppData/Local/Microsoft/WindowsApps, mtime 1716915843): 40 files, no impossibilities.
+# C:\altera\13.0sp1\modelsim_ase\win32aloem (key C:/altera/13.0sp1/modelsim_ase/win32aloem, mtime 1 
+712797896): 95 files, no impossibilities.
+# C:\Users\Bruno\AppData\Local\Microsoft\WindowsApps (key C:/Users/Bruno/AppData/Local/Microsoft/WindowsApps, mtime 1717827326): 40 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Python\Python312\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Python312/, mtime 1713667391): 19 files, no impossibilities.
 # C:\Users\Bruno\AppData\Local\Programs\Python\Python312\Scripts\ (key C:/Users/Bruno/AppData/Local/Programs/Python/Python312/Scripts/, mtime 1713667308): 6 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1709906659): 13 files, no impossibilities.
-# C:\Windows\system32 (key C:/Windows/system32, mtime 1717761076): 3049 files, no impossibilities.
+# C:\Windows\system32 (key C:/Windows/system32, mtime 1717842525): 3049 files, no impossibilities.
 # C:\intelFPGA\18.1\modelsim_ase\win32aloem (key C:/intelFPGA/18.1/modelsim_ase/win32aloem, mtime 1713430436): 111 files, no impossibilities.
-# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1704228401): 5 files, no impossibilities.
+# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 170422 
+8401): 5 files, no impossibilities.
 # C:\Program Files (x86)\GnuWin32\bin (key C:/Program Files (x86)/GnuWin32/bin, mtime 1713268064): 5 files, no impossibilities.
 
 # 3874 files, no impossibilities in 21 directories.
@@ -261,8 +260,7 @@ all:
 
 build/investimento.o: include/investimento.hpp src/investimento.cpp
 #  Implicit rule search has not been done.
-#  Modification time never checked 
-.
+#  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `makefile', line 19):
 	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/investimento.cpp -o ${BUILD}/investimento.o
@@ -293,7 +291,8 @@ build/validador.o: include/validador.hpp include/usuario.hpp src/validador.cpp
 # Not a target:
 include/conta.hpp:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  Modification  
+time never checked.
 #  File has not been updated.
 
 test:
@@ -316,7 +315,7 @@ build/metas.o: include/metas.hpp src/metas.cpp
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-06-07 21:41:48
+#  Last modified 2024-06-08 15:01:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -330,170 +329,7 @@ src/conta.cpp:
 
 # Not a target:
 include/transacao.hpp:
-#  Implicit rule sea 
-rch has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/transacao.cpp:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-include/usuario.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/usuario.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-cleanTest:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `makefile', line 51):
-	del progTeste.exe
-	
-
-run:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `makefile', line 40):
-	${BUILD}/${TARGET}
-	
-
-build/conta.o: include/conta.hpp src/conta.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `makefile', line 16):
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/conta.cpp -o ${BUILD}/conta.o
-	
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `makefile', line 43):
-	del build\*.exe
-	del build\*.o
-	
-
-build/prog: build/cartao_credito.o build/conta.o build/investimento.o build/metas.o build/transacao.o build/usuario.o build/validador.o build/main.o
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `makefile', line 10):
-	${CC} ${CFLAGS} ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/validador.o ${BUILD}/main.o -o ${BUILD}/${TARGET}
-	
-
-# Not a target:
-src/main.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-include/investimento.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/investimento.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-build/transacao.o: include/transacao.hpp src/transacao.cpp
-#  Implicit rule searc 
+#  M 
 make.exe: *** No rule to make target `all'.  Stop.
 
-h has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `makefile', line 25):
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/transacao.cpp -o ${BUILD}/transacao.o
-	
-
-# Not a target:
-include/cartao_credito.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/cartao_credito.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-builder:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `makefile', line 37):
-	if not exist build mkdir build
-	
-
-build/usuario.o: include/usuario.hpp src/usuario.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `makefile', line 28):
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/usuario.cpp -o ${BUILD}/usuario.o
-	
-
-# Not a target:
-include/validador.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/validador.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-include/metas.hpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/metas.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# files hash-table stats:
-# Load=33/1024=3%, Rehash=0, Collisions=2/73=3%
-# VPATH Search Paths
-
-# No `vpath' search paths.
-
-# No general (`VPATH' variable) search path.
-
-# # of strings in strcache: 1
-# # of strcache buffers: 1
-# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
-# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
-
-# Finished Make data base on Fri Jun 07 21:41:55 2024
-
- 

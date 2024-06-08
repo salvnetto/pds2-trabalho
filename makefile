@@ -6,46 +6,49 @@ BUILD = ./build
 SRC = ./src
 INCLUDE = ./include
 
+all: ${BUILD}/${TARGET}
+
 ${BUILD}/${TARGET}: ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/validador.o ${BUILD}/main.o
 	${CC} ${CFLAGS} ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/validador.o ${BUILD}/main.o -o ${BUILD}/${TARGET}
 
-${BUILD}/cartao_credito.o: ${INCLUDE}/cartao_credito.hpp ${SRC}/cartao_credito.cpp
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/cartao_credito.cpp -o ${BUILD}/cartao_credito.o
+${BUILD}/cartao_credito.o: ${INCLUDE}/Financas/cartao_credito.hpp ${INCLUDE}/Financas/transacao.hpp ${SRC}/Financas/cartao_credito.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/Financas/ -c ${SRC}/Financas/cartao_credito.cpp -o ${BUILD}/cartao_credito.o
 
-${BUILD}/conta.o: ${INCLUDE}/conta.hpp ${SRC}/conta.cpp
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/conta.cpp -o ${BUILD}/conta.o
+${BUILD}/conta.o: ${INCLUDE}/Usuario/conta.hpp ${INCLUDE}/Financas/cartao_credito.hpp ${INCLUDE}/Financas/investimento.hpp ${INCLUDE}/Financas/metas.hpp ${SRC}/Usuario/conta.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/Usuario/ -I ${INCLUDE}/Financas/ -c ${SRC}/Usuario/conta.cpp -o ${BUILD}/conta.o
 
-${BUILD}/investimento.o: ${INCLUDE}/investimento.hpp ${SRC}/investimento.cpp
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/investimento.cpp -o ${BUILD}/investimento.o
+${BUILD}/investimento.o: ${INCLUDE}/Financas/investimento.hpp ${SRC}/Financas/investimento.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/Financas/ -c ${SRC}/Financas/investimento.cpp -o ${BUILD}/investimento.o
 
-${BUILD}/metas.o: ${INCLUDE}/metas.hpp ${SRC}/metas.cpp
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/metas.cpp -o ${BUILD}/metas.o
+${BUILD}/metas.o: ${INCLUDE}/Financas/metas.hpp ${SRC}/Financas/metas.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/Financas/ -c ${SRC}/Financas/metas.cpp -o ${BUILD}/metas.o
 
-${BUILD}/transacao.o: ${INCLUDE}/transacao.hpp ${SRC}/transacao.cpp
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/transacao.cpp -o ${BUILD}/transacao.o
+${BUILD}/transacao.o: ${INCLUDE}/Financas/transacao.hpp ${SRC}/Financas/transacao.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/Financas/ -c ${SRC}/Financas/transacao.cpp -o ${BUILD}/transacao.o
 
-${BUILD}/usuario.o: ${INCLUDE}/usuario.hpp ${SRC}/usuario.cpp
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/usuario.cpp -o ${BUILD}/usuario.o
+${BUILD}/usuario.o: ${INCLUDE}/Usuario/usuario.hpp ${INCLUDE}/Usuario/conta.hpp ${INCLUDE}/Financas/cartao_credito.hpp ${SRC}/Usuario/usuario.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/Usuario/ -I ${INCLUDE}/Financas/ -c ${SRC}/Usuario/usuario.cpp -o ${BUILD}/usuario.o
 
-${BUILD}/main.o: ${INCLUDE}/cartao_credito.hpp ${INCLUDE}/conta.hpp ${INCLUDE}/transacao.hpp ${INCLUDE}/usuario.hpp ${INCLUDE}/validador.hpp ${SRC}/main.cpp
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/main.cpp -o ${BUILD}/main.o
+${BUILD}/main.o: ${INCLUDE}/Financas/cartao_credito.hpp ${INCLUDE}/Usuario/conta.hpp ${INCLUDE}/Financas/transacao.hpp ${INCLUDE}/Usuario/usuario.hpp ${INCLUDE}/Usuario/validador.hpp ${SRC}/main.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/Financas/ -I ${INCLUDE}/Usuario/ -c ${SRC}/main.cpp -o ${BUILD}/main.o
 
-${BUILD}/validador.o: ${INCLUDE}/validador.hpp ${INCLUDE}/usuario.hpp ${SRC}/validador.cpp
-	${CC} ${CFLAGS} -I ${INCLUDE}/ -c ${SRC}/validador.cpp -o ${BUILD}/validador.o
+${BUILD}/validador.o: ${INCLUDE}/Usuario/validador.hpp ${INCLUDE}/Usuario/usuario.hpp ${SRC}/Usuario/validador.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/Usuario/ -I ${INCLUDE}/Financas/ -c ${SRC}/Usuario/validador.cpp -o ${BUILD}/validador.o
+
+.PHONY: builder run clean cleanTest test
 
 builder:
-	if not exist build mkdir build
+	mkdir -p ${BUILD}
 
 run:
 	${BUILD}/${TARGET}
 
 clean:
-	del build\*.exe
-	del build\*.o
+	rm -f ${BUILD}/*.exe ${BUILD}/*.o
 
 test:
-	g++ -std=c++11 -Wall -g test.cpp -o progTeste
-	.\progTeste.exe
+	${CC} -std=c++11 -Wall -g test.cpp -o progTeste
+	./progTeste
 
 cleanTest:
-	del progTeste.exe
+	rm -f progTeste
