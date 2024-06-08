@@ -12,12 +12,14 @@ void menuMetasEconomia(Conta& minhaConta) {
     int escolha;
     while (true) {
         try {
+            std::cout<< "\n===============x===============";
             std::cout << "\nMenu de Metas de Economia:\n";
             std::cout << "1. Adicionar Meta de Economia\n";
             std::cout << "2. Ver Metas de Economia\n";
             std::cout << "3. Atualizar Economia\n";
             std::cout << "4. Voltar\n";
             std::cout << "Escolha uma opcao: ";
+            std::cout<< "\n===============x===============\n";
 
             std::cin >> escolha;
 
@@ -72,12 +74,14 @@ void menuInvestimentos(Conta& minhaConta) {
     int escolha;
     while (true) {
         try {
+            std::cout<< "\n===============x===============";
             std::cout << "\nMenu de Investimentos:\n";
             std::cout << "1. Adicionar Investimento\n";
             std::cout << "2. Ver Investimentos\n";
             std::cout << "3. Ver Lucro Total\n";
             std::cout << "4. Voltar\n";
             std::cout << "Escolha uma opcao: ";
+            std::cout<< "\n===============x===============\n";
 
             std::cin >> escolha;
 
@@ -128,12 +132,14 @@ void menuTransacoes(Conta& minhaConta) {
     int escolha;
     while (true) {
         try {
+            std::cout<< "\n===============x===============";
             std::cout << "\nMenu de Transacões:\n";
             std::cout << "1. Adicionar Despesa\n";
             std::cout << "2. Adicionar Depósito\n";
             std::cout << "3. Ver Histórico de Transacões\n";
             std::cout << "4. Voltar\n";
             std::cout << "Escolha uma opcao: ";
+            std::cout<< "\n===============x===============\n";
 
             std::cin >> escolha;
 
@@ -202,6 +208,7 @@ void menuCartoesDeCredito(Conta& minhaConta) {
     int escolha;
     while (true) {
         try {
+            std::cout<< "\n===============x===============";
             std::cout << "\nMenu de Cartões de Credito:\n";
             std::cout << "1. Adicionar Cartao\n";
             std::cout << "2. Remover Cartao\n";
@@ -209,6 +216,7 @@ void menuCartoesDeCredito(Conta& minhaConta) {
             std::cout << "4. Pagar Fatura\n";
             std::cout << "5. Voltar\n";
             std::cout << "Escolha uma opcao: ";
+            std::cout<< "\n===============x===============\n";
 
             std::cin >> escolha;
             //evitando repetição caso a escolha nao seja um numero
@@ -289,6 +297,7 @@ void menuPrincipal(Conta& minhaConta) {
     int escolha;
     while (true) {
         try {
+            std::cout<< "\n===============x===============";
             std::cout << "\nMenu Principal:\n";
             std::cout << "1. Transacões\n";
             std::cout << "2. Cartões de Credito\n";
@@ -297,6 +306,8 @@ void menuPrincipal(Conta& minhaConta) {
             std::cout << "5. Metas de Economia\n";
             std::cout << "6. Sair\n";
             std::cout << "Escolha uma opcao: ";
+            std::cout<< "\n===============x===============\n";
+
             std::cin >> escolha;
 
             //evitando repetição caso a escolha nao seja um numero
@@ -339,12 +350,14 @@ void menuConta(Usuario& usuario) {
     int escolha;
     while (true) {
         try {
+            std::cout<< "\n===============x===============";
             std::cout << "\nSelecione uma Conta Bancaria:\n";
             std::cout << "1. Selecionar conta\n";
             std::cout << "2. Criar conta\n";
             std::cout << "3. Mostrar contas disponiveis\n";
             std::cout << "4. Sair\n";
             std::cout << "Escolha uma opcao: ";
+            std::cout<< "\n===============x===============\n";
             std::cin >> escolha;
 
             //evitando repetição caso a escolha nao seja um numero
@@ -405,11 +418,13 @@ int main() {
 
     while (true) {
         try {
-            std::cout << "Bem-vindo:\n";
+            std::cout<< "\n===============x===============";
+            std::cout << "\nBem-vindo:\n";
             std::cout << "1. Log In\n";
             std::cout << "2. Cadastrar\n";
             std::cout << "3. Sair\n";
             std::cout << "Escolha uma opcao: ";
+            std::cout<< "\n===============x===============\n";
             std::cin >> escolha;
             //evitando repetição caso a escolha nao seja um numero
             if (std::cin.fail()) {
