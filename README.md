@@ -3,7 +3,7 @@ Trabalho para a disciplina de PDS2 dos integrantes Salvador Alves Ferreira Netto
 
 Este é um projeto de um aplicativo de Controle Financeiro Pessoal.
 
-# ** Software ** #
+# *Software* #
 - Este software oferece aos usuários a oportunidade de estabelecer um login exclusivo e criar uma conta personalizada, capacitando-os a gerenciar suas finanças pessoais de forma eficaz. Com funcionalidades que incluem registro detalhado de despesas, definição de metas individuais, monitoramento de investimentos, adição de transações financeiras e integração de cartões de crédito à conta, o programa oferece uma série de vantagens projetadas para capacitar os clientes a administrar seus recursos de maneira mais eficiente. Ao permitir que os usuários estabeleçam limites para seus gastos e acompanhem suas transações, o software visa promover a organização financeira e contribuir para o sucesso individual de cada usuário.
 
 # user-stories
