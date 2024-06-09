@@ -8,19 +8,22 @@ INCLUDE = ./include
 
 all: ${BUILD}/${TARGET}
 
-${BUILD}/${TARGET}: ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/validador.o ${BUILD}/main.o
-	${CC} ${CFLAGS} ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/validador.o ${BUILD}/main.o -o ${BUILD}/${TARGET}
+${BUILD}/${TARGET}: ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/acao.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/validador.o ${BUILD}/main.o
+	${CC} ${CFLAGS} ${BUILD}/cartao_credito.o ${BUILD}/conta.o ${BUILD}/investimento.o ${BUILD}/acao.o ${BUILD}/metas.o ${BUILD}/transacao.o ${BUILD}/usuario.o ${BUILD}/validador.o ${BUILD}/main.o -o ${BUILD}/${TARGET}
 
 ${BUILD}/cartao_credito.o: ${INCLUDE}/Financas/cartao_credito.hpp ${INCLUDE}/Financas/transacao.hpp ${SRC}/Financas/cartao_credito.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/Financas/ -c ${SRC}/Financas/cartao_credito.cpp -o ${BUILD}/cartao_credito.o
 
-${BUILD}/conta.o: ${INCLUDE}/Usuario/conta.hpp ${INCLUDE}/Financas/cartao_credito.hpp ${INCLUDE}/Financas/investimento.hpp ${INCLUDE}/Financas/metas.hpp ${SRC}/Usuario/conta.cpp
+${BUILD}/conta.o: ${INCLUDE}/Usuario/conta.hpp ${INCLUDE}/Financas/cartao_credito.hpp ${INCLUDE}/Financas/investimento.hpp ${INCLUDE}/Financas/acao.hpp ${INCLUDE}/Financas/metas.hpp ${SRC}/Usuario/conta.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/Usuario/ -I ${INCLUDE}/Financas/ -c ${SRC}/Usuario/conta.cpp -o ${BUILD}/conta.o
 
-${BUILD}/investimento.o: ${INCLUDE}/Financas/investimento.hpp ${SRC}/Financas/investimento.cpp
+${BUILD}/investimento.o: ${INCLUDE}/Financas/investimento.hpp ${INCLUDE}/Financas/ativo.hpp ${SRC}/Financas/investimento.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/Financas/ -c ${SRC}/Financas/investimento.cpp -o ${BUILD}/investimento.o
 
-${BUILD}/metas.o: ${INCLUDE}/Financas/metas.hpp ${SRC}/Financas/metas.cpp
+${BUILD}/acao.o: ${INCLUDE}/Financas/acao.hpp ${INCLUDE}/Financas/investimento.hpp ${INCLUDE}/Financas/ativo.hpp ${SRC}/Financas/acao.cpp
+	${CC} ${CFLAGS} -I ${INCLUDE}/Financas/ -c ${SRC}/Financas/acao.cpp -o ${BUILD}/acao.o
+
+${BUILD}/metas.o: ${INCLUDE}/Financas/metas.hpp ${INCLUDE}/Financas/meta.hpp ${SRC}/Financas/metas.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE}/Financas/ -c ${SRC}/Financas/metas.cpp -o ${BUILD}/metas.o
 
 ${BUILD}/transacao.o: ${INCLUDE}/Financas/transacao.hpp ${SRC}/Financas/transacao.cpp
@@ -44,7 +47,7 @@ run:
 	${BUILD}/${TARGET}
 
 clean:
-	rm -f ${BUILD}/*.exe ${BUILD}/*.o
+	rm -f ${BUILD}/*.exe ${BUILD}/*.o ${BUILD}/${TARGET}
 
 test:
 	${CC} -std=c++11 -Wall -g test.cpp -o progTeste

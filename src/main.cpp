@@ -1,5 +1,7 @@
 #include "usuario.hpp"
 #include "validador.hpp"
+#include "investimento.hpp"
+#include "acao.hpp"
 
 #include <iostream>
 #include <string>
@@ -17,7 +19,8 @@ void menuMetasEconomia(Conta& minhaConta) {
             std::cout << "1. Adicionar Meta de Economia\n";
             std::cout << "2. Ver Metas de Economia\n";
             std::cout << "3. Atualizar Economia\n";
-            std::cout << "4. Voltar\n";
+            std::cout << "4. Ver Progresso das Metas\n";
+            std::cout << "5. Voltar\n";
             std::cout << "Escolha uma opcao: ";
             std::cout<< "\n===============x===============\n";
 
@@ -59,7 +62,11 @@ void menuMetasEconomia(Conta& minhaConta) {
                     minhaConta.atualizarValorAtualMetaEconomia(objetivo, valorAtual);
                     break;
                 }
-                case 4:
+                case 4: {
+                    minhaConta.getProgressoMetas();
+                    break;
+                }
+                case 5:
                     return;
                 default:
                     std::cout << "Opcao invalida! Por favor, tente novamente.\n";
@@ -94,10 +101,12 @@ void menuInvestimentos(Conta& minhaConta) {
 
             switch (escolha) {
                 case 1: {
-                    std::string nome;
+                    std::string tipoInvestimento, nome, ticker;
                     double valorAtual, valorInicial, taxaRetorno;
                     std::cout << "\nAdicionar Investimento\n";
-                    std::cout << "Nome do Investimento: ";
+                    std::cout << "Tipo de Investimento (Investimento/Acao): ";
+                    std::cin >> tipoInvestimento;
+                    std::cout << "Nome do Investimento/Acao: ";
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     std::getline(std::cin, nome);
                     std::cout << "Valor Atual: ";
@@ -106,7 +115,14 @@ void menuInvestimentos(Conta& minhaConta) {
                     std::cin >> valorInicial;
                     std::cout << "Taxa de Retorno (decimal): ";
                     std::cin >> taxaRetorno;
-                    minhaConta.adicionarInvestimento(nome, valorAtual, valorInicial, taxaRetorno);
+                    if (tipoInvestimento == "Acao") {
+                        std::cout << "Ticker: ";
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        std::getline(std::cin, ticker);
+                        minhaConta.adicionarInvestimento(std::make_unique<Acao>(nome, valorAtual, valorInicial, taxaRetorno, ticker));
+                    } else {
+                        minhaConta.adicionarInvestimento(std::make_unique<Investimento>(nome, valorAtual, valorInicial, taxaRetorno));
+                    }
                     break;
                 }
                 case 2: {
@@ -143,7 +159,6 @@ void menuTransacoes(Conta& minhaConta) {
 
             std::cin >> escolha;
 
-            //evitando repetição caso a escolha nao seja um numero
             if (std::cin.fail()) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -219,7 +234,6 @@ void menuCartoesDeCredito(Conta& minhaConta) {
             std::cout<< "\n===============x===============\n";
 
             std::cin >> escolha;
-            //evitando repetição caso a escolha nao seja um numero
             if (std::cin.fail()) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -310,7 +324,6 @@ void menuPrincipal(Conta& minhaConta) {
 
             std::cin >> escolha;
 
-            //evitando repetição caso a escolha nao seja um numero
             if (std::cin.fail()) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -360,7 +373,6 @@ void menuConta(Usuario& usuario) {
             std::cout<< "\n===============x===============\n";
             std::cin >> escolha;
 
-            //evitando repetição caso a escolha nao seja um numero
             if (std::cin.fail()) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -426,7 +438,6 @@ int main() {
             std::cout << "Escolha uma opcao: ";
             std::cout<< "\n===============x===============\n";
             std::cin >> escolha;
-            //evitando repetição caso a escolha nao seja um numero
             if (std::cin.fail()) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -489,5 +500,3 @@ int main() {
 
     return 0;
 }
-                   
-                   

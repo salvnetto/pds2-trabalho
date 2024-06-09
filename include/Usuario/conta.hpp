@@ -14,7 +14,7 @@ private:
     double saldo;
     std::vector<CartaoDeCredito> cartoes_de_credito;
     std::vector<std::unique_ptr<Transacao>> transacoes;
-    std::vector<Investimento> investimentos;
+    std::vector<std::unique_ptr<Ativo>> investimentos;
     std::vector<MetaEconomia> metas_economia;
 
 public:
@@ -36,13 +36,14 @@ public:
     void getHistoricoDeTransacoes() const;
     void getHistoricoDeTransacoesCartaoDeCredito() const;
 
-    void adicionarInvestimento(std::string nome, double valor_atual, double valor_inicial, double taxa_retorno);
+    void adicionarInvestimento(std::unique_ptr<Ativo> investimento);
     void getInvestimentos();
     void verLucroTotal();
 
     void adicionarMetaEconomia(std::string obj, double alvo, double atual); 
     void getMetasEconomia() const;
     void atualizarValorAtualMetaEconomia(const std::string& objetivo, double novoValorAtual);
+    void getProgressoMetas() const;
 };
 
-#endif // CONTA_H
+#endif // CONTA_HPP

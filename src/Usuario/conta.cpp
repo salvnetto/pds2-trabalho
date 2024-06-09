@@ -1,5 +1,6 @@
 #include "conta.hpp"
 #include <algorithm>
+#include <iostream>
 
 Conta::Conta(std::string nome_conta, double saldo) : nome_conta(nome_conta), saldo(saldo) {
     if (saldo < 0) {
@@ -26,8 +27,8 @@ void Conta::getSaldo() const {
     std::cout << "Saldo da conta: " << saldo << std::endl;
 }
 
-void Conta::adicionarCartaoDeCredito(std::string nome_cartao, double limite,std::string numero_cartao) {
-    CartaoDeCredito novoCartao(nome_cartao, limite,numero_cartao);
+void Conta::adicionarCartaoDeCredito(std::string nome_cartao, double limite, std::string numero_cartao) {
+    CartaoDeCredito novoCartao(nome_cartao, limite, numero_cartao);
     cartoes_de_credito.push_back(novoCartao);
 }
 
@@ -91,25 +92,22 @@ void Conta::getHistoricoDeTransacoesCartaoDeCredito() const {
     }
 }
 
-
-void Conta::adicionarInvestimento(std::string nome, double valor_atual, double valor_inicial, double taxa_retorno) {
-    Investimento novo_investimento(nome, valor_atual, valor_inicial, taxa_retorno);
-    investimentos.push_back(novo_investimento);
+void Conta::adicionarInvestimento(std::unique_ptr<Ativo> investimento) {
+    investimentos.push_back(std::move(investimento));
 }
 
 void Conta::getInvestimentos() {
     std::cout << "\nInvestimentos:\n";
     for (auto& investimento : investimentos) {
-        std::cout << "Nome: " << investimento.getNome() << ", Valor Atual: $" << investimento.getValorAtual() << std::endl;
+        std::cout << "Nome: " << investimento->getNome() << ", Valor Atual: $" << investimento->getValorAtual() << std::endl;
     }
 }
 
 void Conta::verLucroTotal() {
     for (auto& investimento : investimentos) {
-        std::cout << "Nome: " << investimento.getNome() << ", Lucro Total $" << investimento.calcularLucroTotal() << std::endl;
+        std::cout << "Nome: " << investimento->getNome() << ", Lucro Total $" << investimento->calcularLucroTotal() << std::endl;
     }
 }
-
 
 void Conta::adicionarMetaEconomia(std::string obj, double alvo, double atual) {
     MetaEconomia nova_meta(obj, alvo, atual);
@@ -131,9 +129,14 @@ void Conta::atualizarValorAtualMetaEconomia(const std::string& objetivo, double 
     for (auto& meta : metas_economia) {
         if (meta.getObjetivo() == objetivo) {
             meta.setValorAtual(novoValorAtual);
-            std::cout << "Valor atual da meta '" << objetivo << "' atualizado para " << novoValorAtual << ".\n";
             return;
         }
     }
-    std::cout << "Meta de economia com o objetivo '" << objetivo << "' nao encontrada.\n";
+    throw std::invalid_argument("Meta de economia nao encontrada: " + objetivo);
+}
+
+void Conta::getProgressoMetas() const {
+    for (const auto& meta : metas_economia) {
+        std::cout << "Progresso da Meta " << meta.getObjetivo() << ": " << meta.progresso() << "%" << std::endl;
+    }
 }
